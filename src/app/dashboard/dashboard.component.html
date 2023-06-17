@@ -17,10 +17,30 @@
     button:hover {
       background-color: #4CAF50;
       color: white;
-    transition: ease 0.5s;
+      transition: ease 0.5s;
     }
 
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    .typing-demo {
+      width: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      animation: typing 3s steps(8), blink .4s step-end infinite alternate;
+      border-right: 3px solid;
+    }
   </style>
+  
 </head>
 
 <body class="bg-gray-100">
@@ -31,7 +51,9 @@
           <img class="mx-auto h-10 w-auto"
             src="https://1000logos.net/wp-content/uploads/2021/08/Reliance-Industries-Limited-RIL-Logo-500x314.jpg"
             alt="Your Company">
-          <span class="ml-2">Relntern Manager</span>
+          <span class="ml-2" id="relntern-nav">
+            <div class="typing-demo">Relntern</div>
+          </span>
         </h1>
         <nav>
           <ul class="flex space-x-4 text-black">
