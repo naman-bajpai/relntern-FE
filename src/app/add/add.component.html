@@ -1,88 +1,135 @@
+<style>
+  .slide:hover,
+  .slide:focus {
+    box-shadow: inset 6.5em 0 0 0 var(--hover);
+  }
+</style>
 
-
-<body class="bg-gray-100">
-    <nav>
-      <header class="bg-white py-4">
-        <div class="container mx-auto flex justify-between items-center px-4">
-          <h1 class="text-black text-xl font-bold flex items-center">
-            <img class="mx-auto h-10 w-auto"
-              src="https://1000logos.net/wp-content/uploads/2021/08/Reliance-Industries-Limited-RIL-Logo-500x314.jpg"
-              alt="Your Company">
-            <span class="ml-2">Relntern Manager</span>
-          </h1>
-          <nav>
-            <ul class="flex space-x-4 text-black">
-              <li>Logged in as Admin</li>
-              <li><a href="#">Logout</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-    </nav>
 <body class="bg-gray-100">
   <nav>
-    <!-- Navigation code here -->
+    <header class="bg-white py-4">
+      <div class="container mx-auto flex justify-between items-center px-4">
+        <h1 class="text-black text-xl font-bold flex items-center">
+          <img class="mx-auto h-10 w-auto"
+            src="https://1000logos.net/wp-content/uploads/2021/08/Reliance-Industries-Limited-RIL-Logo-500x314.jpg"
+            alt="Your Company">
+          <span class="ml-2">Relntern Manager</span>
+        </h1>
+        <nav>
+          <ul class="flex space-x-4 text-black">
+            <li>Logged in as Admin</li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
   </nav>
+  
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a (click)="goToPage('dashboard')">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Add Intern</li>
+  </ol>
+</nav>
+  
+  <body class="bg-gray-100">
+    <nav>
+      <!-- Navigation code here -->
+    </nav>
 
-  <main class="container mx-auto mt-8 px-4">
-    <div class="bg-white rounded-lg shadow-lg p-8">
-      <h2 class="text-2xl font-bold mb-4">Add Intern</h2>
-      <form>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div>
-            <label class="block text-gray-700 font-bold mb-2" for="fullName">Full Name</label>
-            <input type="text" id="fullName" name="fullName"
-              class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter full name" required>
-          </div>
-          <div>
-            <label class="block text-gray-700 font-bold mb-2" for="email">Email</label>
-            <input type="email" id="email" name="email"
-              class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter email address" required>
-          </div>
-          <div class="col-span-2">
-            <label class="block text-gray-700 font-bold mb-2" for="address">Address</label>
-            <textarea id="address" name="address"
-              class="border border-gray-300 rounded-md px-3 py-2 w-full h-20 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter address" required></textarea>
-          </div>
-          <div>
-            <label class="block text-gray-700 font-bold mb-2" for="mentor">Mentor</label>
-            <input type="text" id="mentor" name="mentor"
-              class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter mentor's name" required>
-          </div>
-          <div>
-            <label class="block text-gray-700 font-bold mb-2" for="endDate">End Date</label>
-            <input type="date" id="endDate" name="endDate"
-              class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              required>
-          </div>
-          <div class="col-span-2">
-            <label class="block text-gray-700 font-bold mb-2" for="association">Association</label>
-            <select id="association" name="association"
-              class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              required>
-              <option value="" disabled selected>Select association</option>
-              <option value="PetChem IT">PetChem IT</option>
-              <option value="Finance">Finance</option>
-              <option value="Marketing">Marketing</option>
-              <option value="HR">HR</option>
-            </select>
-          </div>
-        </div>
+    <main class="container mx-auto mt-8 px-4">
+      <div class="bg-white rounded-lg shadow-lg p-8">
+        <h2 class="text-2xl font-bold mb-4">Add Intern</h2>
+        <form>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-gray-700 font-bold mb-2" for="internID">Intern ID</label>
+              <input type="internID" id="internID" name="internID"
+                class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter Intern ID" required>
+            </div>
+            <div>
+              <label class="block text-gray-700 font-bold mb-2" for="fullName">Full Name</label>
+              <input type="text" id="fullName" name="fullName"
+                class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter full name" required>
+            </div>
+            <div>
+              <label class="block text-gray-700 font-bold mb-2" for="email">Email</label>
+              <input type="email" id="email" name="email"
+                class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter email address" required>
+            </div>
+            <div>
+              <label class="block text-gray-700 font-bold mb-2" for="mentor">Mentor</label>
+              <input type="mentor" id="mentor" name="mentor"
+                class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter mentor name" required>
+            </div>
 
-        <div class="mt-6">
-          <button type="submit"
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
-            Add Intern
-          </button>
-        </div>
-      </form>
-    </div>
-  </main>
+            <div>
+              <label class="block text-gray-700 font-bold mb-2" for="mentor-email">Mentor Email</label>
+              <input type="text" id="mentor-email" name="mentor-email"
+                class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter mentor's email" required>
+            </div>
+            <div>
+              <label class="block text-gray-700 font-bold mb-2" for="email">Intern ID</label>
+              <input type="email" id="email" name="email"
+                class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter email address" required>
+            </div>
+            <div>
+              <label class="block text-gray-700 font-bold mb-2" for="email">Project</label>
+              <input type="email" id="email" name="email"
+                class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter email address" required>
+            </div>
+            <div>
+              <label class="block text-gray-700 font-bold mb-2" for="startDate">Start Date</label>
+              <input type="date" id="startDate" name="startDate"
+                class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required>
+            </div>
+            <div>
+              <label class="block text-gray-700 font-bold mb-2" for="endDate">End Date</label>
+              <input type="date" id="endDate" name="endDate"
+                class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required>
+            </div>
+            <div>
+              <label class="block text-gray-700 font-bold mb-2" for="role">Role</label>
+              <input type="data" id="role" name="role"
+                class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required>
+            </div>
+            <div class="col-span-2">
+              <label class="block text-gray-700 font-bold mb-2" for="association">Association</label>
+              <select id="association" name="association"
+                class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required>
+                <option value="" disabled selected>Select association</option>
+                <option value="PetChem IT">PetChem IT</option>
+                <option value="Finance">Finance</option>
+                <option value="Marketing">Marketing</option>
+                <option value="HR">HR</option>
+              </select>
+            </div>
+          </div>
 
-</body>
+          <div class="mt-6">
+            <button type="submit"
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+              Add Intern
+            </button>
+            <button type="cancel"
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+              Cancel
+            </button>
+          </div>
 
+        </form>
+      </div>
+    </main>
 
+  </body>
