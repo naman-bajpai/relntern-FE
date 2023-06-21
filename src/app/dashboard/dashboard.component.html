@@ -39,8 +39,25 @@
       animation: typing 3s steps(8), blink .4s step-end infinite alternate;
       border-right: 3px solid;
     }
-  </style>
 
+
+    .breadcrumb{
+      background-color: #fff;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      list-style: none;
+      border-radius: 0.25rem;
+    }
+    .breadcrumb:hover{
+      background-color: #fff;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      list-style: none;
+      border-radius: 0.25rem;
+      text-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+  </style>
+  
 </head>
 
 <body class="bg-gray-100">
@@ -52,12 +69,12 @@
             src="https://1000logos.net/wp-content/uploads/2021/08/Reliance-Industries-Limited-RIL-Logo-500x314.jpg"
             alt="Your Company">
           <span class="ml-2" id="relntern-nav">
-            <div class="typing-demo">Relntern</div>
+            <div class="nav-title">Relntern</div>
           </span>
         </h1>
         <nav>
           <ul class="flex space-x-4 text-black">
-            <li>Logged in as Admin</li>
+            <li class="log-description">Logged in as Admin</li>
             <li><a href="#">Logout</a></li>
           </ul>
         </nav>
@@ -84,7 +101,7 @@
       <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl">
         <h3 class="text-xl font-bold mb-2">List of Interns</h3>
         <p class="text-gray-700">View list of Interns</p>
-        <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">View
+        <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4" (click)="goToPage('list')">View
           List</button>
       </div>
 
