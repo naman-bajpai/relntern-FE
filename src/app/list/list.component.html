@@ -19,11 +19,15 @@
         </div>
       </header>
     </nav>
+
+
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item active" aria-current="page">Home</li>
+        <li class="breadcrumb-item"><a (click)="goToPage('dashboard')">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">List of Interns</li>
       </ol>
     </nav>
+
 
     <div class="container mx-auto mt-8 px-4">
         <div id="table-div" class="bg-white rounded-lg shadow-lg overflow-hidden">

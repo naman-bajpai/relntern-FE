@@ -76,76 +76,70 @@
 
   <main class="container mx-auto mt-8 px-4">
     <div class="bg-white rounded-lg shadow-lg p-8">
-      <h2 class="text-2xl font-bold mb-4">Add Intern</h2>
-      <form #registerForm="ngForm" (ngSubmit)="register(registerForm.form)">
+      <h2 class="text-2xl font-bold mb-4">Add Mentor</h2>
+      <form #registerForm="ngForm">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
-            <label class="block text-gray-700 font mb-2" for="internID">Intern ID</label>
+            <label class="block text-gray-700 font mb-2" for="internID">Mentor Name</label>
             <input type="internID" id="internID" name="internID"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter Intern ID" #id (ngModel)="id" required>
+              placeholder="Enter Intern ID" required>
           </div>
           <div>
-            <label class="block text-gray-700 font mb-2" for="fullName">Full Name</label>
+            <label class="block text-gray-700 font mb-2" for="fullName">Mentor Email</label>
             <input type="text" id="fullName" name="fullName"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter full name" #fullname (ngModel)="fullname" required>
+              placeholder="Enter full name" required>
           </div>
           <div>
-            <label class="block text-gray-700 font mb-2" for="email">Email</label>
+            <label class="block text-gray-700 font mb-2" for="email">Enter Username</label>
             <input type="email" id="email" name="email"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter email address" #internemail (ngModel)="internemail" required>
+              placeholder="Enter email address" required>
           </div>
-
           <div>
-            <label class="block text-gray-700 font mb-2" for="mentor">Mentor</label>
-            <input type="mentor" id="mentor" name="mentor"
+            <label class="block text-gray-700 font mb-2" for="password">Enter Password</label>
+            <input type="password" id="password" name="password"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter mentor name" #mentorname (ngModel)="mentorname" required>
+              placeholder="Enter mentor name" required>
           </div>
 
           <div>
             <label class="block text-gray-700 font mb-2" for="mentor-email">Mentor Email</label>
             <input type="text" id="mentor-email" name="mentor-email"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter mentor's email" #mentoremail (ngModel)="mentoremail" required>
+              placeholder="Enter mentor's email" required>
           </div>
           <div>
-            <label class="block text-gray-700 font mb-2" for="email">Project Name</label>
-            <input type="text" id="projectname" name="projectname"
+            <label class="block text-gray-700 font mb-2" for="email">Intern ID</label>
+            <input type="email" id="email" name="email"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter project name" #projectname (ngModel)="projectname" required>
+              placeholder="Enter email address" required>
           </div>
           <div>
-            <label class="block text-gray-700 font mb-2" for="email">Project Status</label>
-            <input type="text" id="projectstatus" name="projectstatus"
+            <label class="block text-gray-700 font mb-2" for="email">Project</label>
+            <input type="email" id="email" name="email"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter project status" #projectstatus (ngModel)="projectstatus" required>
+              placeholder="Enter email address" required>
           </div>
-          <div>
-            <label class="block text-gray-700 font mb-2" for="startDate">Start Date</label>
-            <input type="date" id="startDate" name="startDate"
-              class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              #startdate (ngModel)="startdate" required>
-          </div>
+
           <div>
             <label class="block text-gray-700 font mb-2" for="endDate">End Date</label>
             <input type="date" id="endDate" name="endDate"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              #enddate (ngModel)="enddate" required>
+              required>
           </div>
           <div>
             <label class="block text-gray-700 font mb-2" for="role">Role</label>
             <input type="data" id="role" name="role"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              #role (ngModel)="role" required>
+              required>
           </div>
           <div class="col-span-2">
             <label class="block text-gray-700 font mb-2" for="association">Association</label>
             <select id="association" name="association"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              #association (ngModel)="association" required>
+              required>
               <option value="" disabled selected>Select association</option>
               <option value="PetChem IT">PetChem IT</option>
               <option value="Finance">Finance</option>

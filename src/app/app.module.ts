@@ -9,6 +9,8 @@ import{Router} from '@angular/router';
 import { AddComponent } from './add/add.component';
 import { ListComponent } from './list/list.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AddmentorComponent } from './addmentor/addmentor.component';
 
 @NgModule({
   declarations: [
@@ -16,19 +18,21 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     DashboardComponent,
     AddComponent,
-    ListComponent
+    ListComponent,
+    AddmentorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
   constructor(private router:Router){
-
+    
   }
 
   goToPage(pageName:string):void{

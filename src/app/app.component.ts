@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { InternService } from './intern.service';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'relntern';
+
+  constructor(private internService: InternService) { }
+
+  register(registerForm: FormGroup) {
+    this.internService.registerIntern(registerForm.value).subscribe(
+      (resp) => {
+        console.log(resp);
+      },
+      (err) => console.log(err)
+    );
+  }
 }
