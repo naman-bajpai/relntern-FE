@@ -11,5 +11,9 @@ export class InternService {
   public registerIntern(interndetails: any) {
     return this.http.post(this.API + '/registerIntern', interndetails);
   }
+
+  public getInterns() {
+    return this.http.get(this.API + '/getInterns');
+  }
 }
  
