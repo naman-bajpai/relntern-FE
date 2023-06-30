@@ -12,6 +12,10 @@ export class ListComponent {
 
   }
 
+  ngOnInit(): void {
+    
+  }
+
   goToPage(pageName:string):void{
     this.router.navigate([`${pageName}`]);
   }
