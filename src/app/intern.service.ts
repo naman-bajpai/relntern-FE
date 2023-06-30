@@ -15,5 +15,7 @@ export class InternService {
   public getInterns() {
     return this.http.get(this.API + '/getInterns');
   }
+
+  
 }
  

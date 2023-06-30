@@ -8,6 +8,7 @@ import { InternService } from '../intern.service';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
+  internDetails: any;
 
   constructor(private router: Router, private internService: InternService) { }
 
@@ -19,6 +20,7 @@ export class ListComponent implements OnInit {
     this.internService.getInterns().subscribe(
       (resp) => {
         console.log(resp);
+        this.internDetails = resp;
       },
       (err) => {
         console.log(err);

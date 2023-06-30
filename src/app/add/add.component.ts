@@ -18,6 +18,7 @@ export class AddComponent {
     this.internService.registerIntern(registerForm.value).subscribe(
       (resp: any) => {
         console.log(resp);
+        registerForm.reset();
       },
       (err: any) => {
         console.log(err);
