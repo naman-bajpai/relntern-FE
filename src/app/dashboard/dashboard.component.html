@@ -139,13 +139,12 @@
           </tr>
         </thead>
         <tbody >
-          <tr>
-            <td class="py-2 px-4">1</td>
-            <td class="py-2 px-4"><button type="button" data-toggle="modal" data-target=".bd-example-modal-lg">Naman
-                Bajpai</button></td>
-            <td class="py-2 px-4">Deepthi Namala</td>
-            <td class="py-2 px-4">31.07.2023</td>
-            <td class="py-2 px-4">PetChem IT</td>
+          <tr  *ngFor="let interns of internDetails" >
+            <td class="py-2 px-4">{{interns.id}}</td>
+                <td class="py-2 px-4">{{interns.fullname}}</td>
+                <td class="py-2 px-4">{{interns.mentorname}}</td>
+                <td class="py-2 px-4">{{interns.enddate}}</td>
+                <td class="py-2 px-4">{{interns.association}}</td>
           </tr>
           <tr>
             <td class="py-2 px-4">1</td>
