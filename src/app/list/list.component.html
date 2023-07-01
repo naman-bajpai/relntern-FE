@@ -1,26 +1,28 @@
 <body class="bg-white-100">
-    <nav>
-      <header class="bg-white py-4">
-        <div class="container mx-auto flex justify-between items-center px-4">
-          <h1 class="text-black text-xl font-bold flex items-center">
-            <img class="mx-auto h-10 w-auto"
-              src="https://1000logos.net/wp-content/uploads/2021/08/Reliance-Industries-Limited-RIL-Logo-500x314.jpg"
-              alt="Your Company">
-            <span class="ml-2" id="relntern-nav">
-              <div class="nav-title">Relntern</div>
-            </span>
-          </h1>
-          <nav>
-            <ul class="flex space-x-4 text-black">
-              <li class="log-description">Logged in as Admin</li>
-              <li><a href="#">Logout</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-    </nav>
+  <nav>
+    <header class="bg-white py-4">
+      <div class="container mx-auto flex justify-between items-center px-4">
+        <h1 class="text-black text-xl font-bold flex items-center">
+          <img class="mx-auto h-10 w-auto"
+            src="https://1000logos.net/wp-content/uploads/2021/08/Reliance-Industries-Limited-RIL-Logo-500x314.jpg"
+            alt="Your Company">
+          <!-- <span class="ml-2" id="relntern-nav">
+            <div class="nav-title">Welcome, Admin</div>
+          </span> -->
+        </h1>
+        <nav>
+          <ul class="flex space-x-4 text-black">
+            <li id="Add_Mentor"><button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+              (click)="goToPage('addmentor')">Add Mentor</button></li>
+            <li id="Add_Mentor"><button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+                (click)="goToPage('login')">Logout</button></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  </nav>
 
-
+    
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a (click)="goToPage('dashboard')">Home</a></li>
@@ -40,10 +42,12 @@
                 <th scope="col" class="py-2 px-4">End State</th>
                 <th scope="col" class="py-2 px-4">Association</th>
                 <th scrope="col" class="py-2 px-4"></th>
+                <th scrope="col" class="py-2 px-4"></th>
+                <th scrope="col" class="py-2 px-4"></th>
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let interns of internDetails">
+              <!-- <tr *ngFor="let interns of internDetails">
                 <td class="py-2 px-4">{{interns.id}}</td>
                 <td class="py-2 px-4">{{interns.fullname}}</td>
                 <td class="py-2 px-4">{{interns.mentorname}}</td>
@@ -51,6 +55,17 @@
                 <td class="py-2 px-4">{{interns.association}}</td>
                 <td class="py-2 px-4"><button class="btn btn-primary">Edit</button></td>
                 <td class="py-2 px-4"><button class="btn btn-primary">Delete</button></td>
+                <td class="py-2 px-4"><button class="btn btn-primary" (click)="goToPage('status')">Status</button></td>
+              </tr> -->
+              <tr>
+                <td class="py-2 px-4">1</td>
+                <td class="py-2 px-4">Naman Bajpai</td>
+                <td class="py-2 px-4">Deepthi Namala</td>
+                <td class="py-2 px-4">31.07.2023</td>
+                <td class="py-2 px-4">PetChem IT</td>
+                <td class="py-2 px-4"><button class="btn btn-primary">Edit</button></td>
+                <td class="py-2 px-4"><button class="btn btn-primary">Delete</button></td>
+                <td class="py-2 px-4"><button class="btn btn-primary" (click)="goToPage('status')">Status</button></td>
               </tr>
             </tbody>
           </table>

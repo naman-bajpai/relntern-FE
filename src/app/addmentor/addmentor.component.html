@@ -16,16 +16,16 @@
       transition: ease 0.5s;
     }
 
-    .typing-demo {
+    /* .typing-demo {
       width: 0;
       overflow: hidden;
       white-space: nowrap;
       animation: typing 3s steps(8), blink .4s step-end infinite alternate;
       border-right: 3px solid;
-    }
+    } */
 
 
-    .breadcrumb {
+    /* .breadcrumb {
       background-color: #fff;
       padding: 0.75rem 1rem;
       margin-bottom: 1rem;
@@ -41,12 +41,12 @@
       list-style: none;
       border-radius: 0.25rem;
       text-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-    }
+    } */
   }
 </style>
 
 
-<body class="bg-gray-100">
+<body class="bg-white-100">
   <nav>
     <header class="bg-white py-4">
       <div class="container mx-auto flex justify-between items-center px-4">
@@ -55,22 +55,24 @@
             src="https://1000logos.net/wp-content/uploads/2021/08/Reliance-Industries-Limited-RIL-Logo-500x314.jpg"
             alt="Your Company">
           <!-- <span class="ml-2" id="relntern-nav">
-          <div class="nav-title">Welcome, Admin</div>
-        </span> -->
+            <div class="nav-title">Welcome, Admin</div>
+          </span> -->
         </h1>
         <nav>
           <ul class="flex space-x-4 text-black">
-            <li id="logout-button"><a href="#">Logout</a></li>
+            <li id="Add_Mentor"><button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+              (click)="goToPage('addmentor')">Add Mentor</button></li>
+            <li id="Add_Mentor"><button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+                (click)="goToPage('login')">Logout</button></li>
           </ul>
         </nav>
       </div>
     </header>
   </nav>
-
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a (click)="goToPage('dashboard')">Home</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Add Intern</li>
+      <li class="breadcrumb-item active" aria-current="page">Add Mentor</li>
     </ol>
   </nav>
 

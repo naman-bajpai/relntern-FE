@@ -6,13 +6,15 @@ import { AddComponent } from './add/add.component';
 import { ListComponent } from './list/list.component';
 import { Router } from '@angular/router';
 import { AddmentorComponent } from './addmentor/addmentor.component';
+import { StatusComponent } from './status/status.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'add', component: AddComponent } ,
   { path: 'list', component: ListComponent },
-  { path: 'addmentor', component: AddmentorComponent }
+  { path: 'addmentor', component: AddmentorComponent },
+  { path: 'status', component: StatusComponent }
 ];
 
 @NgModule({

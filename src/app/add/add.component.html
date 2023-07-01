@@ -46,7 +46,7 @@
 </style>
 
 
-<body class="bg-gray-100">
+<body class="bg-white-100">
   <nav>
     <header class="bg-white py-4">
       <div class="container mx-auto flex justify-between items-center px-4">
@@ -55,12 +55,15 @@
             src="https://1000logos.net/wp-content/uploads/2021/08/Reliance-Industries-Limited-RIL-Logo-500x314.jpg"
             alt="Your Company">
           <!-- <span class="ml-2" id="relntern-nav">
-          <div class="nav-title">Welcome, Admin</div>
-        </span> -->
+            <div class="nav-title">Welcome, Admin</div>
+          </span> -->
         </h1>
         <nav>
           <ul class="flex space-x-4 text-black">
-            <li id="logout-button"><a href="#">Logout</a></li>
+            <li id="Add_Mentor"><button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+              (click)="goToPage('addmentor')">Add Mentor</button></li>
+            <li id="Add_Mentor"><button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+                (click)="goToPage('login')">Logout</button></li>
           </ul>
         </nav>
       </div>

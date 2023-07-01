@@ -11,6 +11,7 @@ import { ListComponent } from './list/list.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AddmentorComponent } from './addmentor/addmentor.component';
+import { StatusComponent } from './status/status.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AddmentorComponent } from './addmentor/addmentor.component';
     DashboardComponent,
     AddComponent,
     ListComponent,
-    AddmentorComponent
+    AddmentorComponent,
+    StatusComponent
   ],
   imports: [
     BrowserModule,
