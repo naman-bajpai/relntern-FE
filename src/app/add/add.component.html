@@ -83,8 +83,8 @@
       <form #registerForm="ngForm" (ngSubmit)="register(registerForm.form)">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div class="col-span-2">
-            <label class="block text-gray-700 font mb-2" for="fullName">Full Name</label>
-            <input type="text" id="fullName" name="fullName"
+            <label class="block text-gray-700 font mb-2" for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter full name" #fullname (ngModel)="fullname" required>
           </div>
@@ -103,8 +103,8 @@
           </div>
 
           <div>
-            <label class="block text-gray-700 font mb-2" for="mentor-email">Mentor Email</label>
-            <input type="text" id="mentor-email" name="mentor-email"
+            <label class="block text-gray-700 font mb-2" for="mentoremail">Mentor Email</label>
+            <input type="text" id="mentoremail" name="mentoremail"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter mentor's email" #mentoremail (ngModel)="mentoremail" required>
           </div>
