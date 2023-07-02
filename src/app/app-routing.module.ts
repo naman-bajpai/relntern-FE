@@ -10,7 +10,7 @@ import { StatusComponent } from './status/status.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent},
   { path: 'add', component: AddComponent } ,
   { path: 'list', component: ListComponent },
   { path: 'addmentor', component: AddmentorComponent },
