@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class InternService {
 
   constructor(private http: HttpClient) { }
-  API = 'http://localhost:8080';
+  API = 'http://localhost:9091';
   public registerIntern(interndetails: any) {
     return this.http.post(this.API + '/registerIntern', interndetails);
   }
