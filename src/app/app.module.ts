@@ -14,6 +14,7 @@ import { AddmentorComponent } from './addmentor/addmentor.component';
 import { StatusComponent } from './status/status.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { InactiveComponent } from './inactive/inactive.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AddComponent,
     ListComponent,
     AddmentorComponent,
-    StatusComponent
+    StatusComponent,
+    InactiveComponent
   ],
   imports: [
     BrowserModule,

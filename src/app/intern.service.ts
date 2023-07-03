@@ -16,6 +16,8 @@ export class InternService {
     return this.http.get(this.API + '/getInterns');
   }
 
+  public deleteIntern(id: any) {
+    return this.http.delete(this.API + '/deleteIntern?id=' + id);
+  }
   
 }
- 

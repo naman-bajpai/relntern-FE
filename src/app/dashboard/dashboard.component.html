@@ -32,40 +32,11 @@
       }
     }
 
-    /* .typing-demo {
-      width: 0;
-      overflow: hidden;
-      white-space: nowrap;
-      animation: typing 3s steps(8), blink .4s step-end infinite alternate;
-      border-right: 3px solid;
+
+    #dashboard-menu:hover {
+      transform: translate(-1.5%, -1.5%);
+      transition: transform 0.45s;
     }
- */
-
-    /* .breadcrumb{
-      background-color: #fff;
-      padding: 0.75rem 1rem;
-      margin-bottom: 1rem;
-      list-style: none;
-      border-radius: 0.25rem;
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
-    }
-    .breadcrumb:hover{
-      background-color: #fff;
-      padding: 0.75rem 1rem;
-      margin-bottom: 1rem;
-      list-style: none;
-      border-radius: 0.25rem;
-      text-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-    } */
-
-
-  #dashboard-menu:hover{
-    transform :translate(-1.5%, -1.5%);
-    transition : transform 0.45s;
-  }
-
-
-
   </style>
 
 </head>
@@ -84,10 +55,16 @@
         </h1>
         <nav>
           <ul class="flex space-x-4 text-black">
-            <li id="Add_Mentor"><button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
-              (click)="goToPage('addmentor')">Add Mentor</button></li>
-            <li id="Add_Mentor"><button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+            <li id="Add_Mentor"><button type="button"
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+              (click)="goToPage('inactive')">Past Interns</button></li>
+            <li id="Add_Mentor"><button type="button"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+                (click)="goToPage('addmentor')">Add Mentor</button></li>
+            <li id="Add_Mentor"><button type="button"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
                 (click)="goToPage('login')">Logout</button></li>
+           
           </ul>
         </nav>
       </div>
@@ -113,7 +90,8 @@
       <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl" id="dashboard-menu">
         <h3 class="text-xl font-bold mb-2">List of Interns</h3>
         <p class="text-gray-700">View list of Interns</p>
-        <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4" (click)="goToPage('list')">View
+        <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+          (click)="goToPage('list')">View
           List</button>
       </div>
 
@@ -138,45 +116,21 @@
             <th scope="col" class="py-2 px-4">Association</th>
           </tr>
         </thead>
-        <tbody >
-          <tr  *ngFor="let interns of internDetails" >
+        <tbody>
+          <tr *ngFor="let interns of internDetails">
             <td class="py-2 px-4">{{interns.id}}</td>
-                <td class="py-2 px-4">{{interns.fullname}}</td>
-                <td class="py-2 px-4">{{interns.mentorname}}</td>
-                <td class="py-2 px-4">{{interns.enddate}}</td>
-                <td class="py-2 px-4">{{interns.association}}</td>
+            <td class="py-2 px-4">{{interns.fullname}}</td>
+            <td class="py-2 px-4">{{interns.mentor}}</td>
+            <td class="py-2 px-4">{{interns.endDate}}</td>
+            <td class="py-2 px-4">{{interns.association}}</td>
           </tr>
-          <tr>
-            <td class="py-2 px-4">1</td>
-            <td class="py-2 px-4"><button type="button" data-toggle="modal" data-target=".bd-example-modal-lg">Naman
-                Bajpai</button></td>
-            <td class="py-2 px-4">Deepthi Namala</td>
-            <td class="py-2 px-4">31.07.2023</td>
-            <td class="py-2 px-4">PetChem IT</td>
-          </tr>
-          <tr>
-            <td class="py-2 px-4">1</td>
-            <td class="py-2 px-4"><button type="button" data-toggle="modal" data-target=".bd-example-modal-lg">Naman
-                Bajpai</button></td>
-            <td class="py-2 px-4">Deepthi Namala</td>
-            <td class="py-2 px-4">31.07.2023</td>
-            <td class="py-2 px-4">PetChem IT</td>
-          </tr>
-          <tr>
-            <td class="py-2 px-4">1</td>
-            <td class="py-2 px-4"><button type="button" data-toggle="modal" data-target=".bd-example-modal-lg">Naman
-                Bajpai</button></td>
-            <td class="py-2 px-4">Deepthi Namala</td>
-            <td class="py-2 px-4">31.07.2023</td>
-            <td class="py-2 px-4">PetChem IT</td>
-          </tr>
-
         </tbody>
       </table>
     </div>
   </div>
 
-  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         This Modal test

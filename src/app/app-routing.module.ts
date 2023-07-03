@@ -7,6 +7,7 @@ import { ListComponent } from './list/list.component';
 import { Router } from '@angular/router';
 import { AddmentorComponent } from './addmentor/addmentor.component';
 import { StatusComponent } from './status/status.component';
+import { InactiveComponent } from './inactive/inactive.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'add', component: AddComponent } ,
   { path: 'list', component: ListComponent },
   { path: 'addmentor', component: AddmentorComponent },
-  { path: 'status', component: StatusComponent }
+  { path: 'status', component: StatusComponent },
+  { path: 'inactive', component: InactiveComponent }
 ];
 
 @NgModule({

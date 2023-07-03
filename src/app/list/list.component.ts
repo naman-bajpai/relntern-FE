@@ -16,6 +16,21 @@ export class ListComponent implements OnInit {
     this.getInterns();
   }
 
+  openModal() {
+    const modalDiv = document.getElementById('myModal');
+    if (modalDiv != null) {
+      modalDiv.style.display = "block";
+    }
+  }
+
+  closeModal() {
+    const modalDiv = document.getElementById('myModal');
+    if (modalDiv != null) {
+      modalDiv.style.display = "none";
+    }
+  }
+
+
   getInterns(): void {
     this.internService.getInterns().subscribe(
       (resp) => {
@@ -25,6 +40,16 @@ export class ListComponent implements OnInit {
       (err) => {
         console.log(err);
       }
+    );
+  }
+
+  deleteIntern(interns: { id: any; }) {
+    this.internService.deleteIntern(interns.id).subscribe(
+      (resp) => {
+        console.log(resp);
+        this.internDetails = resp;
+      },
+      (err) => console.log(err)
     );
   }
 
