@@ -1,1 +1,119 @@
-<p>mentorlist works!</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relntern Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <style>
+        .avatar {
+            vertical-align: middle;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        button:hover {
+            background-color: #4CAF50;
+            color: white;
+            transition: ease 0.5s;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+
+        #dashboard-menu:hover {
+            transform: translate(-1.5%, -1.5%);
+            transition: transform 0.45s;
+        }
+    </style>
+
+</head>
+
+<body class="bg-white-100">
+    <nav>
+        <header class="bg-white py-4">
+            <div class="container mx-auto flex justify-between items-center px-4">
+                <h1 class="text-black text-xl font-bold flex items-center">
+                    <img class="mx-auto h-10 w-auto"
+                        src="https://1000logos.net/wp-content/uploads/2021/08/Reliance-Industries-Limited-RIL-Logo-500x314.jpg"
+                        alt="Your Company">
+                    <!-- <span class="ml-2" id="relntern-nav">
+              <div class="nav-title">Welcome, Admin</div>
+            </span> -->
+                </h1>
+                <nav>
+                    <ul class="flex space-x-4 text-black">
+                        <li id="Add_Mentor"><button type="button"
+                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+                                (click)="goToPage('inactive')">Past Interns</button></li>
+                        <li id="Add_Mentor"><button type="button"
+                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+                                (click)="goToPage('addmentor')">Add Mentor</button></li>
+                        <li id="Add_Mentor"><button type="button"
+                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+                                (click)="goToPage('login')">Logout</button></li>
+
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </nav>
+
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a (click)="goToPage('dashboard')">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">List of Mentors</li>
+        </ol>
+    </nav>
+
+
+    <div class="container mx-auto mt-8 px-4">
+        <div id="table-div" class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <table class="min-w-full table-auto">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th scope="col" class="py-2 px-4">Intern ID</th>
+                        <th scope="col" class="py-2 px-4">Full Name</th>
+                        <th scope="col" class="py-2 px-4">Mentor</th>
+                        <th scope="col" class="py-2 px-4">End Date</th>
+                        <th scope="col" class="py-2 px-4">Association</th>
+                        <th scrope="col" class="py-2 px-4"></th>
+                        <th scrope="col" class="py-2 px-4"></th>
+                        <th scrope="col" class="py-2 px-4"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <!-- <td class="py-2 px-4">{{interns.id}}</td>
+                  <td class="py-2 px-4">{{interns.fullname}}</td>
+                  <td class="py-2 px-4">{{interns.mentor}}</td>
+                  <td class="py-2 px-4">{{interns.endDate}}</td>
+                  <td class="py-2 px-4">{{interns.association}}</td>
+                  <td class="py-2 px-4"><button class="btn btn-primary">Remarks</button></td>
+                  <td class="py-2 px-4"><button class="btn btn-primary">Delete</button></td>
+                  <td class="py-2 px-4"> -->
+
+                    </tr>
+                    <!-- <tr>
+                  <td class="py-2 px-4">1</td>
+                  <td class="py-2 px-4">Naman Bajpai</td>
+                  <td class="py-2 px-4">Deepthi Namala</td>
+                  <td class="py-2 px-4">31.07.2023</td>
+                  <td class="py-2 px-4">PetChem IT</td>
+                  <td class="py-2 px-4"><button class="btn btn-primary">Edit</button></td>
+                  <td class="py-2 px-4"><button class="btn btn-primary">Delete</button></td>
+                  <td class="py-2 px-4"><button class="btn btn-primary" (click)="goToPage('status')">Status</button></td>
+                </tr> -->
+                </tbody>
+            </table>
+        </div>
