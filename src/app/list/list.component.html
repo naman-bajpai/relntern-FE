@@ -1,3 +1,43 @@
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relntern Manager</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <style>
+    .avatar {
+      vertical-align: middle;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+
+    button:hover {
+      background-color: #4CAF50;
+      color: white;
+      transition: ease 0.5s;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+
+    #dashboard-menu:hover {
+      transform: translate(-1.5%, -1.5%);
+      transition: transform 0.45s;
+    }
+  </style>
+
+</head>
 <body class="bg-white-100">
   <nav>
     <header class="bg-white py-4">
@@ -12,10 +52,16 @@
         </h1>
         <nav>
           <ul class="flex space-x-4 text-black">
-            <li id="Add_Mentor"><button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+            <li id="Add_Mentor"><button type="button"
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+              (click)="goToPage('inactive')">Past Interns</button></li>
+            <li id="Add_Mentor"><button type="button"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
               (click)="goToPage('addmentor')">Add Mentor</button></li>
-            <li id="Add_Mentor"><button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+            <li id="Add_Mentor"><button type="button"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
                 (click)="goToPage('login')">Logout</button></li>
+           
           </ul>
         </nav>
       </div>
@@ -53,7 +99,7 @@
                 <td class="py-2 px-4">{{interns.mentor}}</td>
                 <td class="py-2 px-4">{{interns.endDate}}</td>
                 <td class="py-2 px-4">{{interns.association}}</td>
-                <td class="py-2 px-4"><button class="btn btn-primary" (click)="closeModal()">Close</button></td>
+                <td class="py-2 px-4"><button class="btn btn-primary" (click)="closeModal()">Remarks</button></td>
                 <td class="py-2 px-4"><button class="btn btn-primary" (click)="deleteIntern(interns)">Delete</button></td>
                 <td class="py-2 px-4">
                   

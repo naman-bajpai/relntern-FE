@@ -60,9 +60,11 @@
         </h1>
         <nav>
           <ul class="flex space-x-4 text-black">
-            <li id="Add_Mentor"><button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
-              (click)="goToPage('addmentor')">Add Mentor</button></li>
-            <li id="Add_Mentor"><button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+            <li id="Add_Mentor"><button type="button"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+                (click)="goToPage('addmentor')">Add Mentor</button></li>
+            <li id="Add_Mentor"><button type="button"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
                 (click)="goToPage('login')">Logout</button></li>
           </ul>
         </nav>
@@ -85,48 +87,29 @@
             <label class="block text-gray-700 font mb-2" for="internID">Mentor Name</label>
             <input type="internID" id="internID" name="internID"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter Intern ID" required>
+              placeholder="Enter Mentor name" required>
           </div>
           <div>
             <label class="block text-gray-700 font mb-2" for="fullName">Mentor Email</label>
             <input type="text" id="fullName" name="fullName"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter full name" required>
+              placeholder="Enter mentor email" required>
           </div>
           <div>
-            <label class="block text-gray-700 font mb-2" for="email">Enter Username</label>
-            <input type="email" id="email" name="email"
-              class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter email address" required>
-          </div>
-          <div>
-            <label class="block text-gray-700 font mb-2" for="password">Enter Password</label>
+            <label class="block text-gray-700 font mb-2" for="password">New Password</label>
             <input type="password" id="password" name="password"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter mentor name" required>
+              placeholder="Enter relntern password" required>
+          </div>
+          <div>
+            <label class="block text-gray-700 font mb-2" for="email">Project name</label>
+            <input type="email" id="email" name="email"
+              class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter project name" required>
           </div>
 
           <div>
-            <label class="block text-gray-700 font mb-2" for="mentor-email">Mentor Email</label>
-            <input type="text" id="mentor-email" name="mentor-email"
-              class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter mentor's email" required>
-          </div>
-          <div>
-            <label class="block text-gray-700 font mb-2" for="email">Intern ID</label>
-            <input type="email" id="email" name="email"
-              class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter email address" required>
-          </div>
-          <div>
-            <label class="block text-gray-700 font mb-2" for="email">Project</label>
-            <input type="email" id="email" name="email"
-              class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter email address" required>
-          </div>
-
-          <div>
-            <label class="block text-gray-700 font mb-2" for="endDate">End Date</label>
+            <label class="block text-gray-700 font mb-2" for="endDate"> Date</label>
             <input type="date" id="endDate" name="endDate"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
               required>
@@ -152,14 +135,16 @@
         </div>
 
         <div class="mt-6">
-          <button type="submit"
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
-            Add Intern
-          </button>
-          <button type="cancel"
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
-            Cancel
-          </button>
+          <ul class="flex space-x-4 text-black">
+            <li> <button type="submit"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                Add Intern
+              </button> </li>
+            <li> <button type="cancel"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                Cancel
+              </button> </li>
+          </ul>
         </div>
 
       </form>

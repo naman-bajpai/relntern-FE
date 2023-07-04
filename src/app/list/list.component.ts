@@ -14,6 +14,7 @@ export class ListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getInterns();
+    this.deleteIntern(this.internDetails);
   }
 
   openModal() {
