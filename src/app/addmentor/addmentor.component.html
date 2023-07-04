@@ -15,36 +15,8 @@
       color: white;
       transition: ease 0.5s;
     }
-
-    /* .typing-demo {
-      width: 0;
-      overflow: hidden;
-      white-space: nowrap;
-      animation: typing 3s steps(8), blink .4s step-end infinite alternate;
-      border-right: 3px solid;
-    } */
-
-
-    /* .breadcrumb {
-      background-color: #fff;
-      padding: 0.75rem 1rem;
-      margin-bottom: 1rem;
-      list-style: none;
-      border-radius: 0.25rem;
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    .breadcrumb:hover {
-      background-color: #fff;
-      padding: 0.75rem 1rem;
-      margin-bottom: 1rem;
-      list-style: none;
-      border-radius: 0.25rem;
-      text-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-    } */
   }
 </style>
-
 
 <body class="bg-white-100">
   <nav>
@@ -54,9 +26,6 @@
           <img class="mx-auto h-10 w-auto"
             src="https://1000logos.net/wp-content/uploads/2021/08/Reliance-Industries-Limited-RIL-Logo-500x314.jpg"
             alt="Your Company">
-          <!-- <span class="ml-2" id="relntern-nav">
-            <div class="nav-title">Welcome, Admin</div>
-          </span> -->
         </h1>
         <nav>
           <ul class="flex space-x-4 text-black">
@@ -81,50 +50,50 @@
   <main class="container mx-auto mt-8 px-4">
     <div class="bg-white rounded-lg shadow-lg p-8">
       <h2 class="text-2xl font-bold mb-4">Add Mentor</h2>
-      <form #registerForm="ngForm">
+      <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
-            <label class="block text-gray-700 font mb-2" for="internID">Mentor Name</label>
-            <input type="internID" id="internID" name="internID"
+            <label class="block text-gray-700 font mb-2" for="mentorname">Mentor Name</label>
+            <input type="text" id="mentorname" name="mentorname"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter Mentor name" required>
+              placeholder="Enter Mentor name" #mentorname (ngModel)="mentorname" required>
           </div>
           <div>
-            <label class="block text-gray-700 font mb-2" for="fullName">Mentor Email</label>
-            <input type="text" id="fullName" name="fullName"
+            <label class="block text-gray-700 font mb-2" for="mentoremail">Mentor Email</label>
+            <input type="email" id="mentoremail" name="mentoremail"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter mentor email" required>
+              placeholder="Enter mentor email" #mentoremail (ngModel)="mentoremail" required>
           </div>
           <div>
-            <label class="block text-gray-700 font mb-2" for="password">New Password</label>
-            <input type="password" id="password" name="password"
+            <label class="block text-gray-700 font mb-2" for="mentorpass">New Password</label>
+            <input type="password" id="mentorpass" name="mentorpass"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter relntern password" required>
+              placeholder="Enter relntern password" #mentorpass (ngModel)="mentorpass"  required>
           </div>
           <div>
-            <label class="block text-gray-700 font mb-2" for="email">Project name</label>
-            <input type="email" id="email" name="email"
+            <label class="block text-gray-700 font mb-2" for="project">Project name</label>
+            <input type="text" id="project" name="project"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter project name" required>
+              placeholder="Enter project name" #project (ngModel)="project" required>
           </div>
 
           <div>
-            <label class="block text-gray-700 font mb-2" for="endDate"> Date</label>
-            <input type="date" id="endDate" name="endDate"
+            <label class="block text-gray-700 font mb-2" for="regisDate">Registration Date</label>
+            <input type="date" id="regisDate" name="regisDate"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              required>
+              #regisDate (ngModel)="regisDate" required>
           </div>
           <div>
             <label class="block text-gray-700 font mb-2" for="role">Role</label>
-            <input type="data" id="role" name="role"
+            <input type="text" id="role" name="role"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              required>
+              #role (ngModel)="role" required>
           </div>
           <div class="col-span-2">
             <label class="block text-gray-700 font mb-2" for="association">Association</label>
             <select id="association" name="association"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              required>
+              #association (ngModel)="association" required>
               <option value="" disabled selected>Select association</option>
               <option value="PetChem IT">PetChem IT</option>
               <option value="Finance">Finance</option>
@@ -138,7 +107,7 @@
           <ul class="flex space-x-4 text-black">
             <li> <button type="submit"
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
-                Add Intern
+                Add Mentor
               </button> </li>
             <li> <button type="cancel"
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">

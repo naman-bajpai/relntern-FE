@@ -20,4 +20,7 @@ export class InternService {
     return this.http.delete(this.API + '/deleteIntern?id=' + id);
   }
   
+  public registerMentor(mentordetails: any) {
+    return this.http.post(this.API + '/registerMentor', mentordetails);
+  }
 }
