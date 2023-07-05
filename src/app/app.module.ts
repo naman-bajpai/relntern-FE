@@ -17,6 +17,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InactiveComponent } from './inactive/inactive.component';
 import { InternsuccessComponent } from './internsuccess/internsuccess.component';
 import { MentorlistComponent } from './mentorlist/mentorlist.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogBodyComponent } from './dialog-body/dialog-body.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule } from '@angular/material/form-field';
+
+
 
 @NgModule({
   declarations: [
@@ -29,7 +36,8 @@ import { MentorlistComponent } from './mentorlist/mentorlist.component';
     StatusComponent,
     InactiveComponent,
     InternsuccessComponent,
-    MentorlistComponent
+    MentorlistComponent,
+    DialogBodyComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +45,12 @@ import { MentorlistComponent } from './mentorlist/mentorlist.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatIconModule,
+    FormsModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

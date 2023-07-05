@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { InternService } from '../intern.service';
+import { Modal } from 'flowbite'
+import type { ModalOptions, ModalInterface } from 'flowbite'
+import { MatDialog } from '@angular/material/dialog';
+import  { DialogBodyComponent } from '../dialog-body/dialog-body.component';
 
 @Component({
   selector: 'app-list',
@@ -10,25 +14,11 @@ import { InternService } from '../intern.service';
 export class ListComponent implements OnInit {
   internDetails: any;
 
-  constructor(private router: Router, private internService: InternService) { }
+  constructor(private router: Router, private internService: InternService, private matDialog : MatDialog) { }
 
   ngOnInit(): void {
     this.getInterns();
     this.deleteIntern(this.internDetails);
-  }
-
-  openModal() {
-    const modalDiv = document.getElementById('myModal');
-    if (modalDiv != null) {
-      modalDiv.style.display = "block";
-    }
-  }
-
-  closeModal() {
-    const modalDiv = document.getElementById('myModal');
-    if (modalDiv != null) {
-      modalDiv.style.display = "none";
-    }
   }
 
 
@@ -52,6 +42,17 @@ export class ListComponent implements OnInit {
       },
       (err) => console.log(err)
     );
+  }
+
+ 
+    openDialog() {
+      this.matDialog.open(DialogBodyComponent, {
+        width: '500px',
+        height: '140px'
+      });
+    }
+    closeDialog() {
+      this.matDialog.closeAll();
   }
 
   goToPage(pageName: string): void {

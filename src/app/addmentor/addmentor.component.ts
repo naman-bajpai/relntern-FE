@@ -9,11 +9,15 @@ import { InternService } from '../intern.service';
   styleUrls: ['./addmentor.component.css']
 })
 export class AddmentorComponent {
+  mentorDetails: any;
+  constructor(private router:Router, private internService : InternService) { }
 
-  constructor(private router:Router, private interService : InternService) { }
+
+  
+
   register(registerForm: NgForm) {
     if (registerForm.valid) {
-      this.interService.registerMentor(registerForm.value).subscribe(
+      this.internService.registerMentor(registerForm.value).subscribe(
         (resp: any) => {
           console.log(resp);
           registerForm.resetForm();

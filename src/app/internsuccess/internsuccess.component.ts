@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import  { DialogBodyComponent } from '../dialog-body/dialog-body.component';
 
 @Component({
   selector: 'app-internsuccess',
@@ -7,9 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./internsuccess.component.css']
 })
 export class InternsuccessComponent {
-
-  constructor( private router: Router) {}
-
+  title = 'angular-dialog';
+  constructor(private router: Router , private matDialog : MatDialog ) {}
   goToPage(pageName: string): void {
     this.router.navigate([pageName]);
   }

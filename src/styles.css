@@ -8,9 +8,13 @@
 
 .breadcrumb{
     margin-left: 50px;
-    margin-left: 50px;
+    margin-right: 50px;
 }
 
+.jumbotron{
+    margin-left:50px ;
+    margin-right:50px ;
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

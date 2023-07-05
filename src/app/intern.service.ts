@@ -24,5 +24,7 @@ export class InternService {
     return this.http.post(this.API + '/registerMentor', mentordetails);
   }
 
-  
+  public getMentor() {
+    return this.http.get(this.API + '/getMentor');
+  } 
 }
