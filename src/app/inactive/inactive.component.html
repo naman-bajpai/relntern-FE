@@ -60,7 +60,7 @@
                                 (click)="goToPage('addmentor')">Add Mentor</button></li>
                         <li id="Add_Mentor"><button type="button"
                                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
-                                (click)="goToPage('login')">Logout</button></li>
+                                (click)="goToPage('')">Logout</button></li>
                     </ul>
                 </nav>
             </div>
@@ -68,7 +68,7 @@
     </nav>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">Home</li>
+            <li class="breadcrumb-item active" aria-current="page"><a (click)="goToPage('dashboard')">Home </a></li>
             <li class="breadcrumb-item active" aria-current="page">Past Interns</li>
         </ol>
     </nav>

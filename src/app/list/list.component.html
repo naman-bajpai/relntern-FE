@@ -60,7 +60,7 @@
                 (click)="goToPage('addmentor')">Add Mentor</button></li>
             <li id="Add_Mentor"><button type="button"
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
-                (click)="goToPage('login')">Logout</button></li>
+                (click)="goToPage('')">Logout</button></li>
 
           </ul>
         </nav>
@@ -99,7 +99,7 @@
             <td class="py-2 px-4">{{interns.mentor}}</td>
             <td class="py-2 px-4">{{interns.endDate}}</td>
             <td class="py-2 px-4">{{interns.association}}</td>
-            <td class="py-2 px-4"><button class="btn btn-primary" >Remarks</button></td>
+            <td class="py-2 px-4"><button class="btn btn-primary" (click)="openEdit()">Remarks</button></td>
             <td class="py-2 px-4"><button class="btn btn-primary" (click)="openDialog()">Delete</button></td>
             <td class="py-2 px-4">
 

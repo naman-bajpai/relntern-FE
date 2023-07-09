@@ -22,6 +22,7 @@ import { DialogBodyComponent } from './dialog-body/dialog-body.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule } from '@angular/material/form-field';
+import { UpdateDialogBodyComponent } from './update-dialog-body/update-dialog-body.component';
 
 
 
@@ -37,7 +38,8 @@ import {MatFormFieldModule } from '@angular/material/form-field';
     InactiveComponent,
     InternsuccessComponent,
     MentorlistComponent,
-    DialogBodyComponent
+    DialogBodyComponent,
+    UpdateDialogBodyComponent
   ],
   imports: [
     BrowserModule,

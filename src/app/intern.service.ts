@@ -19,12 +19,16 @@ export class InternService {
   public deleteIntern(id: any) {
     return this.http.delete(this.API + '/deleteIntern?id=' + id);
   }
-  
+
   public registerMentor(mentordetails: any) {
     return this.http.post(this.API + '/registerMentor', mentordetails);
   }
 
   public getMentor() {
     return this.http.get(this.API + '/getMentor');
-  } 
+  }
+
+  public updateIntern(intern: any) {
+    return this.http.put(this.API + '/updateIntern', intern);
+  }
 }

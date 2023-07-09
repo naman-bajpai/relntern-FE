@@ -5,6 +5,7 @@ import { Modal } from 'flowbite'
 import type { ModalOptions, ModalInterface } from 'flowbite'
 import { MatDialog } from '@angular/material/dialog';
 import  { DialogBodyComponent } from '../dialog-body/dialog-body.component';
+import { UpdateDialogBodyComponent } from '../update-dialog-body/update-dialog-body.component';
 
 @Component({
   selector: 'app-list',
@@ -44,7 +45,13 @@ export class ListComponent implements OnInit {
     );
   }
 
- 
+    openEdit(){
+      this.matDialog.open(UpdateDialogBodyComponent, {
+        width: '800px',
+        height: '700px'
+      });
+    }
+
     openDialog() {
       this.matDialog.open(DialogBodyComponent, {
         width: '500px',
