@@ -1,47 +1,33 @@
 <style>
-  .slide:hover,
-  .slide:focus {
-    box-shadow: inset 6.5em 0 0 0 var(--hover);
+  .avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
 
-    .avatar {
-      vertical-align: middle;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-    }
+  button:hover {
+    background-color: #4CAF50;
+    color: white;
+    transition: ease 0.5s;
+  }
 
-    button:hover {
-      background-color: #4CAF50;
-      color: white;
-      transition: ease 0.5s;
-    }
-
-    .typing-demo {
+  @keyframes typing {
+    from {
       width: 0;
-      overflow: hidden;
-      white-space: nowrap;
-      animation: typing 3s steps(8), blink .4s step-end infinite alternate;
-      border-right: 3px solid;
     }
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
 
 
-    .breadcrumb {
-      background-color: #fff;
-      padding: 0.75rem 1rem;
-      margin-bottom: 1rem;
-      list-style: none;
-      border-radius: 0.25rem;
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    .breadcrumb:hover {
-      background-color: #fff;
-      padding: 0.75rem 1rem;
-      margin-bottom: 1rem;
-      list-style: none;
-      border-radius: 0.25rem;
-      text-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-    }
+  #dashboard-menu:hover {
+    transform: translate(-1.5%, -1.5%);
+    transition: transform 0.45s;
   }
 </style>
 
@@ -62,15 +48,23 @@
           <ul class="flex space-x-4 text-black">
             <li id="Add_Mentor"><button type="button"
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+                (click)="goToPage('inactive')">Past Interns</button></li>
+            <li id="Add_Mentor"><button type="button"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
                 (click)="goToPage('addmentor')">Add Mentor</button></li>
             <li id="Add_Mentor"><button type="button"
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+                (click)="goToPage('mentorlist')">Mentor List</button></li>
+            <li id="Add_Mentor"><button type="button"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
                 (click)="goToPage('')">Logout</button></li>
+
           </ul>
         </nav>
       </div>
     </header>
   </nav>
+
 
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -84,12 +78,13 @@
       <h2 class="text-2xl font-bold mb-4">Add Intern</h2>
       <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div class="col-span-2">
+          <div>
             <label class="block text-gray-700 font mb-2" for="fullname">Full Name</label>
             <input type="text" id="fullname" name="fullname"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter full name" #fullname (ngModel)="fullname" required>
           </div>
+
           <div>
             <label class="block text-gray-700 font mb-2" for="email">Email</label>
             <input type="email" id="email" name="email"
@@ -138,9 +133,9 @@
             <label class="block text-gray-700 font mb-2" for="role">Role</label>
             <input type="data" id="role" name="role"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              #role (ngModel)="role" required>
+              placeholder="Enter intern role" #role (ngModel)="role" required>
           </div>
-          <div class="col-span-2">
+          <div>
             <label class="block text-gray-700 font mb-2" for="association">Association</label>
             <select id="association" name="association"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -152,6 +147,35 @@
               <option value="HR">HR</option>
             </select>
           </div>
+          <h2 class="text-2xl font-bold mb-4">Academic Details</h2>
+          <div>
+
+          </div>
+          <div>
+            <label class="block text-gray-700 font mb-2" for="uniname">University Name</label>
+            <input type="text" id="uniname" name="uniname"
+              class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter University Name" #uniname (ngModel)="uniname" required>
+          </div>
+          <div>
+            <label class="block text-gray-700 font mb-2" for="coursename">Course Name</label>
+            <input type="text" id="coursename" name="coursename"
+              class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Ex. BTech, BE, BBA ...etc" #coursename (ngModel)="coursename" required>
+          </div>
+          <div>
+            <label class="block text-gray-700 font mb-2" for="specialization">Specialization</label>
+            <input type="text" id="specialization" name="specialization"
+              class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Please enter your major" #specialization (ngModel)="specialization" required>
+          </div>
+          <div>
+            <label class="block text-gray-700 font mb-2" for="gradyear">Graduation Date</label>
+            <input type="date" id="gradyear" name="gradyear"
+              class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+               #gradyear (ngModel)="gradyear" required>
+          </div>
+
         </div>
 
         <div class="mt-6">

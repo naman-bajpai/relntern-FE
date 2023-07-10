@@ -45,12 +45,22 @@ export class ListComponent implements OnInit {
     );
   }
 
-    openEdit(){
-      this.matDialog.open(UpdateDialogBodyComponent, {
-        width: '800px',
-        height: '700px'
-      });
-    }
+  // openEdit(id: number): void {
+  //   this.matDialog.open(UpdateDialogBodyComponent, {
+  //     width: '800px',
+  //     height: '700px',
+  //     data: { id: id }
+  //   });
+  // }
+
+
+  openEdit(intern: any): void {
+    this.matDialog.open(UpdateDialogBodyComponent, {
+      width: '800px',
+      height: '700px',
+      data: { intern }
+    });
+  }
 
     openDialog() {
       this.matDialog.open(DialogBodyComponent, {
