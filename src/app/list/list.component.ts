@@ -55,6 +55,7 @@ export class ListComponent implements OnInit {
 
 
   openEdit(intern: any): void {
+    console.log(intern);
     this.matDialog.open(UpdateDialogBodyComponent, {
       width: '800px',
       height: '700px',

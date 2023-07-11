@@ -23,6 +23,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule } from '@angular/material/form-field';
 import { UpdateDialogBodyComponent } from './update-dialog-body/update-dialog-body.component';
+import { InternprofileComponent } from './internprofile/internprofile.component';
 
 
 
@@ -39,7 +40,8 @@ import { UpdateDialogBodyComponent } from './update-dialog-body/update-dialog-bo
     InternsuccessComponent,
     MentorlistComponent,
     DialogBodyComponent,
-    UpdateDialogBodyComponent
+    UpdateDialogBodyComponent,
+    InternprofileComponent
   ],
   imports: [
     BrowserModule,

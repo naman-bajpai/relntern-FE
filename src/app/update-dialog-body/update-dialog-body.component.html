@@ -2,70 +2,70 @@
     <h3>Are you sure you want to update this record ?</h3>
 </div>
 <div class="modal-body">
-    <form >
+    <form #updateForm="ngForm" (ngSubmit)="updateIntern()">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
                 <label class="block text-gray-700 font mb-2" for="fullname">Full Name</label>
                 <input type="text" id="fullname" name="fullname"
                     class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Enter full name" #fullname (ngModel)="fullname" required>
+                    placeholder="Enter full name" #fullname [(ngModel)]="internUpdate.fullname" required>
             </div>
 
             <div>
                 <label class="block text-gray-700 font mb-2" for="email">Email</label>
                 <input type="email" id="email" name="email"
                     class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Enter email address" #internemail (ngModel)="internemail" required>
+                    placeholder="Enter email address" #internemail [(ngModel)]="internUpdate.email" required>
             </div>
 
             <div>
                 <label class="block text-gray-700 font mb-2" for="mentor">Mentor</label>
                 <input type="mentor" id="mentor" name="mentor"
                     class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Enter mentor name" #mentorname (ngModel)="mentorname" required>
+                    placeholder="Enter mentor name" #mentorname [(ngModel)]="internUpdate.mentor" required>
             </div>
 
             <div>
                 <label class="block text-gray-700 font mb-2" for="mentoremail">Mentor Email</label>
                 <input type="text" id="mentoremail" name="mentoremail"
                     class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Enter mentor's email" #mentoremail (ngModel)="mentoremail" required>
+                    placeholder="Enter mentor's email" #mentoremail [(ngModel)]="internUpdate.mentoremail" required>
             </div>
             <div>
                 <label class="block text-gray-700 font mb-2" for="email">Project Name</label>
                 <input type="text" id="projectname" name="projectname"
                     class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Enter project name" #projectname (ngModel)="projectname" required>
+                    placeholder="Enter project name" #projectname [(ngModel)]="internUpdate.projectname" required>
             </div>
             <div>
                 <label class="block text-gray-700 font mb-2" for="email">Project Status</label>
                 <input type="text" id="projectstatus" name="projectstatus"
                     class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Enter project status" #projectstatus (ngModel)="projectstatus" required>
+                    placeholder="Enter project status" #projectstatus [(ngModel)]="internUpdate.projectstatus" required>
             </div>
             <div>
                 <label class="block text-gray-700 font mb-2" for="startDate">Start Date</label>
                 <input type="date" id="startDate" name="startDate"
                     class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    #startdate (ngModel)="startdate" required>
+                    #startdate [(ngModel)]="internUpdate.startDate" required>
             </div>
             <div>
                 <label class="block text-gray-700 font mb-2" for="endDate">End Date</label>
                 <input type="date" id="endDate" name="endDate"
                     class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    #enddate (ngModel)="enddate" required>
+                    #enddate [(ngModel)]="internUpdate.endDate" required>
             </div>
             <div>
                 <label class="block text-gray-700 font mb-2" for="role">Role</label>
                 <input type="data" id="role" name="role"
                     class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Enter intern role" #role (ngModel)="role" required>
+                    placeholder="Enter intern role" #role [(ngModel)]="internUpdate.role" required>
             </div>
             <div>
                 <label class="block text-gray-700 font mb-2" for="association">Association</label>
                 <select id="association" name="association"
                     class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    #association (ngModel)="association" required>
+                    #association [(ngModel)]="internUpdate.association" required>
                     <option value="" disabled selected>Select association</option>
                     <option value="PetChem IT">PetChem IT</option>
                     <option value="Finance">Finance</option>
@@ -81,25 +81,25 @@
                 <label class="block text-gray-700 font mb-2" for="uniname">University Name</label>
                 <input type="text" id="uniname" name="uniname"
                     class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Enter University Name" #uniname (ngModel)="uniname" required>
+                    placeholder="Enter University Name" #uniname [(ngModel)]="internUpdate.uniname" required>
             </div>
             <div>
                 <label class="block text-gray-700 font mb-2" for="coursename">Course Name</label>
                 <input type="text" id="coursename" name="coursename"
                     class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Ex. BTech, BE, BBA ...etc" #coursename (ngModel)="coursename" required>
+                    placeholder="Ex. BTech, BE, BBA ...etc" #coursename [(ngModel)]="internUpdate.coursename" required>
             </div>
             <div>
                 <label class="block text-gray-700 font mb-2" for="specialization">Specialization</label>
                 <input type="text" id="specialization" name="specialization"
                     class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Please enter your major" #specialization (ngModel)="specialization" required>
+                    placeholder="Please enter your major" #specialization [(ngModel)]="internUpdate.specialization" required>
             </div>
             <div>
                 <label class="block text-gray-700 font mb-2" for="gradyear">Graduation Date</label>
                 <input type="date" id="gradyear" name="gradyear"
                     class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    #gradyear (ngModel)="gradyear" required>
+                    #gradyear [(ngModel)]="internUpdate.gradyear" required>
             </div>
 
         </div>
@@ -108,7 +108,7 @@
             <div class="form-group">
                 <div class="mt-6">
                     <ul class="flex space-x-4 text-black">
-                        <li> <button type="button" class="btn btn-outline-primary" id="save-changes" >Save
+                        <li> <button type="submit" class="btn btn-outline-primary" id="save-changes" >Save
                                 Changes</button>
                         </li>
                         <li><button type="button" class="btn btn-outline-primary" (click)="closeDialog()">Close

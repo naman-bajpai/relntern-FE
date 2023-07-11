@@ -10,6 +10,7 @@ import { StatusComponent } from './status/status.component';
 import { InactiveComponent } from './inactive/inactive.component';
 import { InternsuccessComponent } from './internsuccess/internsuccess.component';
 import { MentorlistComponent } from './mentorlist/mentorlist.component';
+import { InternprofileComponent } from './internprofile/internprofile.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'status', component: StatusComponent },
   { path: 'inactive', component: InactiveComponent },
   { path: 'internsuccess', component: InternsuccessComponent },
-  { path: 'mentorlist', component: MentorlistComponent }
+  { path: 'mentorlist', component: MentorlistComponent },
+  { path: 'internprofile', component: InternprofileComponent }
 ];
 
 @NgModule({

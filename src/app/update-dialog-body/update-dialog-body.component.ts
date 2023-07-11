@@ -1,5 +1,8 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { InternService } from '../intern.service';
+
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-update-dialog-body',
@@ -12,23 +15,36 @@ export class UpdateDialogBodyComponent {
   constructor(
     public dialogRef: MatDialogRef<UpdateDialogBodyComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { intern: any }
-  ) {
-    this.internUpdate = { 
-      fullname: data.intern.name,
+    , private internService: InternService, private router: Router) {
+    this.internUpdate = {
+      id: data.intern.id,
+      fullname: data.intern.fullname,
       email: data.intern.email,
       mentor: data.intern.mentor,
       mentoremail: data.intern.mentoremail,
       projectname: data.intern.projectname,
       projectstatus: data.intern.projectstatus,
-      startdate: data.intern.startdate,
-      enddate: data.intern.enddate,
+      startDate: data.intern.startDate,
+      endDate: data.intern.endDate,
       role: data.intern.role,
       association: data.intern.association,
       gradyear: data.intern.gradyear,
       uniname: data.intern.uniname,
       coursename: data.intern.coursename,
       specialization: data.intern.specialization,
-     };
+    };
+  }
+
+  updateIntern(): void {
+    console.log(this.internUpdate);
+    this.internService.updateIntern(this.internUpdate).subscribe(
+      (resp) => {
+        console.log(resp);
+        this.closeDialog();
+        this.router.navigate(['/'], {skipLocationChange: true}).then(() => this.router.navigate(['/list']));
+      },
+      (err) => { console.log(err); }
+    );
   }
 
   closeDialog(): void {

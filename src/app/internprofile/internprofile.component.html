@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intern Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Add any additional custom styles here */
+        .row {
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 3px;
+        }
+
+        .avatar {
+            width: 100px;
+            border-radius: 50%;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-gap: 1rem;
+        }
+
+        .grid-item {
+            padding: 1rem;
+            background-color: #F8F8F8;
+        }
+
+        .grid-item h3,
+        .grid-item h4 {
+            margin: 0;
+        }
+
+        #fullname,#email{
+            padding-right: 40px;
+            padding-left: 40px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body class="bg-white-100">
+    <nav>
+        <header class="bg-white py-4">
+            <div class="container mx-auto flex justify-between items-center px-4">
+                <h1 class="text-black text-xl font-bold">
+                    <img class="mx-auto h-10 w-auto"
+                        src="https://1000logos.net/wp-content/uploads/2021/08/Reliance-Industries-Limited-RIL-Logo-500x314.jpg"
+                        alt="Your Company">
+                </h1>
+                <nav>
+                    <ul class="flex space-x-4 text-black">
+                        <li>
+                            <a href="dashboard.html"
+                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">Back
+                                to Dashboard</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </nav>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a (click)="goToPage('dashboard')">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Intern profile</li>
+        </ol>
+    </nav>
+
+    <div class="container mx-auto">
+        <div class="grid-container">
+            <div class="grid-item">
+                <Label for="fullname">Intern Name :</Label>
+                <h3 id="fullname">Naman Bajpai</h3>
+                <Label for="fullname">Intern Email :</Label>
+                <h4 id="email">namanbajpai4@gmail.com</h4>
+            </div>
+            <div class="grid-item">
+                <h3>Project Details</h3>
+                <label for="mentor">Mentor Name:</label>
+                <h4 id="mentor">Deepthi Namala</h4>
+
+                <label for="mentoremail">Mentor Email:</label>
+                <h4 id="mentoremail">deepthi.namala@ril.com</h4>
+
+                <label for="projectname">Project Name:</label>
+                <h4 id="projectname">Relntern</h4>
+
+                <label for="projectstatus">Project Status:</label>
+                <h4 id="projectstatus">Started</h4>
+
+                <label for="startDate">Start Date:</label>
+                <h4 id="startDate">30-05-2023</h4>
+
+                <label for="endDate">End Date:</label>
+                <h4 id="endDate">30-05-2023</h4>
+            </div>
+            <div class="grid-item">
+                <h3>Role & Association</h3>
+                <label for="role">Role:</label>
+                <h4 id="role">Full-Stack Developer</h4>
+
+                <label for="association">Association:</label>
+                <h4 id="association">PetChem IT</h4>
+            </div>
+            <div class="grid-item">
+                <h3>Academic Details</h3>
+                <label for="uniname">University Name:</label>
+                <h4 id="uniname">Stanford University</h4>
+
+                <label for="coursename">Course Name:</label>
+                <h4 id="coursename">Bachelor of Science</h4>
+
+                <label for="specialization">Specialization:</label>
+                <h4 id="specialization">Computer Science</h4>
+
+                <label for="gradyear">Graduation Date:</label>
+                <h4 id="gradyear">31-06-2026</h4>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
