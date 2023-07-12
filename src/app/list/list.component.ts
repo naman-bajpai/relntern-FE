@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { InternService } from '../intern.service';
-import { Modal } from 'flowbite'
-import type { ModalOptions, ModalInterface } from 'flowbite'
 import { MatDialog } from '@angular/material/dialog';
 import  { DialogBodyComponent } from '../dialog-body/dialog-body.component';
 import { UpdateDialogBodyComponent } from '../update-dialog-body/update-dialog-body.component';
@@ -19,7 +17,6 @@ export class ListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getInterns();
-    this.deleteIntern(this.internDetails);
   }
 
 
@@ -63,12 +60,14 @@ export class ListComponent implements OnInit {
     });
   }
 
-    openDialog() {
-      this.matDialog.open(DialogBodyComponent, {
-        width: '500px',
-        height: '140px'
-      });
-    }
+  openDialog(intern: any): void {
+    this.matDialog.open(DialogBodyComponent, {
+      width: '500px',
+      height: '140px',
+      data: intern
+    });
+  }
+  
     closeDialog() {
       this.matDialog.closeAll();
   }

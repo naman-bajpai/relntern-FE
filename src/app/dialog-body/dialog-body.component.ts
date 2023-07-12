@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { InternService } from '../intern.service';
 import { Router } from '@angular/router';
 
@@ -11,7 +11,12 @@ import { Router } from '@angular/router';
 export class DialogBodyComponent implements OnInit {
   internDetails: any;
 
-  constructor(private matDialog: MatDialog, private internService: InternService, private router: Router) { }
+  constructor(
+    private dialogRef: MatDialogRef<DialogBodyComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private internService: InternService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     // Retrieve the internDetails before deleting
@@ -24,20 +29,19 @@ export class DialogBodyComponent implements OnInit {
   }
 
   deleteIntern(intern: any) {
-    this.internService.deleteIntern(intern.id).subscribe(
+    this.internService.deleteIntern(this.data.id).subscribe(
       (resp) => {
         console.log(resp);
         // Update the internDetails after deleting
         this.internDetails = this.internDetails.filter((i: any) => i.id !== intern.id);
         this.closeDialog();
         this.router.navigate(['/'], {skipLocationChange: true}).then(() => this.router.navigate(['/list']));
-
       },
       (err) => console.log(err)
     );
   }
-  
+
   closeDialog() {
-    this.matDialog.closeAll();
+    this.dialogRef.close();
   }
 }

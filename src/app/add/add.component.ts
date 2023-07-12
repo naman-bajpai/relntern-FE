@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { InternService } from '../intern.service';
 import { Router } from '@angular/router';
 
@@ -9,7 +9,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./add.component.css']
 })
 export class AddComponent {
-  constructor(private internService: InternService, private router: Router) {}
+  registerForm: FormGroup;
+
+  constructor(
+    private internService: InternService,
+    private router: Router,
+    private formBuilder: FormBuilder
+  ) {
+    this.registerForm = this.formBuilder.group({
+      fullname: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      mentor: ['', Validators.required],
+      mentoremail: ['', Validators.required],
+      projectname: ['', Validators.required],
+      projectstatus: ['', Validators.required],
+      startDate: ['', Validators.required],
+      endDate: ['', Validators.required],
+      role: [''],
+      association: ['', Validators.required],
+      gradyear: ['', Validators.required],
+      uniname: ['', Validators.required],
+      coursename: ['', Validators.required],
+      specialization: ['', Validators.required]
+    });
+  }
 
   register(registerForm: NgForm) {
     if (registerForm.valid) {

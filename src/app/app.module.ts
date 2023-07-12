@@ -24,6 +24,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule } from '@angular/material/form-field';
 import { UpdateDialogBodyComponent } from './update-dialog-body/update-dialog-body.component';
 import { InternprofileComponent } from './internprofile/internprofile.component';
+import { MaterialModule } from 'src/material.module';
+import { ToastrModule } from 'ngx-toastr';
+import { InvalidDialogComponent } from './invalid-dialog/invalid-dialog.component';
 
 
 
@@ -41,7 +44,8 @@ import { InternprofileComponent } from './internprofile/internprofile.component'
     MentorlistComponent,
     DialogBodyComponent,
     UpdateDialogBodyComponent,
-    InternprofileComponent
+    InternprofileComponent,
+    InvalidDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +58,10 @@ import { InternprofileComponent } from './internprofile/internprofile.component'
     MatButtonModule,
     MatIconModule,
     FormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MaterialModule,
+    ReactiveFormsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

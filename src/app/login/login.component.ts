@@ -14,4 +14,18 @@ export class LoginComponent {
   goToPage(pageName:string):void{
     this.router.navigate([`${pageName}`]);
   }
+
+  checkPassword(password: string) {
+    if (password.length < 8) {
+      this.router.navigate(['/dashboard']);
+    } else {
+      console.log('Password is too short');
+    }
+  }
+
+  showPassword: boolean = false;
+
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
 }
