@@ -59,12 +59,7 @@
             <li id="Add_Mentor"><button type="button"
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
                 (click)="goToPage('inactive')">Past Interns</button></li>
-            <li id="Add_Mentor"><button type="button"
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
-                (click)="goToPage('addmentor')">Add Mentor</button></li>
-            <li id="Add_Mentor"><button type="button"
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
-                (click)="goToPage('mentorlist')">Mentor List</button></li>
+           
             <li id="Add_Mentor"><button type="button"
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
                 (click)="goToPage('')">Logout</button></li>
@@ -74,13 +69,16 @@
       </div>
     </header>
   </nav>
+
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item active" aria-current="page">Home</li>
+      <li class="breadcrumb-item"><a (click)="goToPage('mentordashboard')">Mentor Home</a></li> 
     </ol>
   </nav>
+
+
   <main class="container mx-auto mt-8 px-4">
-    <h2 class="text-2xl font-bold mb-4">Welcome to Relntern </h2>
+    <h2 class="text-2xl font-bold mb-4">Welcome to Relntern</h2>
     <p class="text-gray-700 mb-4">Choose an option below:</p>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
@@ -88,7 +86,7 @@
         <h3 class="text-xl font-bold mb-2" id="add-intern-text">Add Interns</h3>
         <p class="text-gray-700">Click here to add a new intern to the system.</p>
         <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
-          (click)="goToPage('add')">Add Infra Details</button>
+          (click)="goToPage('add')">Add Interns</button>
       </div>
 
       <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl" id="dashboard-menu">
@@ -99,40 +97,10 @@
           List</button>
       </div>
       <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl" id="dashboard-menu">
-        <h3 class="text-xl font-bold mb-2">Provide remarks</h3>
-        <p class="text-gray-700">Click here to add remarks for a particular intern.</p>
+        <h3 class="text-xl font-bold mb-2">View schedule</h3>
+        <p class="text-gray-700">Click here to view the schedule.</p>
         <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">View
           Schedule</button>
       </div>
     </div>
   </main>
-
-  <div class="container mx-auto mt-8 px-4" id="table-body">
-    <div id="table-div" class="bg-white rounded-lg shadow-lg overflow-hidden">
-      <table class="min-w-full table-auto">
-        <thead>
-          <tr class="bg-gray-200">
-            <th scope="col" class="py-2 px-4">Intern ID</th>
-            <th scope="col" class="py-2 px-4">Full Name</th>
-            <th scope="col" class="py-2 px-4">Mentor</th>
-            <th scope="col" class="py-2 px-4">End Date</th>
-            <th scope="col" class="py-2 px-4">Association</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let interns of internDetails">
-            <td class="py-2 px-4">{{interns.id}}</td>
-            <td class="py-2 px-4">{{interns.fullname}}</td>
-            <td class="py-2 px-4">{{interns.mentor}}</td>
-            <td class="py-2 px-4">{{interns.endDate}}</td>
-            <td class="py-2 px-4">{{interns.association}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-</body>
-
-
-</html>

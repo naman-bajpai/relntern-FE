@@ -1,36 +1,48 @@
-<style>
-  .avatar {
-    vertical-align: middle;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-  }
+<!DOCTYPE html>
+<html lang="en">
 
-  button:hover {
-    background-color: #4CAF50;
-    color: white;
-    transition: ease 0.5s;
-  }
-
-  @keyframes typing {
-    from {
-      width: 0;
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relntern Manager</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <style>
+    .avatar {
+      vertical-align: middle;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
     }
-  }
 
-  @keyframes blink {
-    50% {
-      border-color: transparent;
+    button:hover {
+      background-color: #4CAF50;
+      color: white;
+      transition: ease 0.5s;
     }
-  }
 
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+    }
 
-  #dashboard-menu:hover {
-    transform: translate(-1.5%, -1.5%);
-    transition: transform 0.45s;
-  }
-</style>
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+    
+    #dashboard-menu:hover {
+      transform: translate(-1.5%, -1.5%);
+      transition: transform 0.45s;
+    }
 
+    #table-div{
+      margin-bottom: 10px;
+    }
+  </style>
+
+</head>
 
 <body class="bg-white-100">
   <nav>
@@ -40,9 +52,7 @@
           <img class="mx-auto h-10 w-auto"
             src="https://1000logos.net/wp-content/uploads/2021/08/Reliance-Industries-Limited-RIL-Logo-500x314.jpg"
             alt="Your Company">
-          <!-- <span class="ml-2" id="relntern-nav">
-            <div class="nav-title">Welcome, Admin</div>
-          </span> -->
+
         </h1>
         <nav>
           <ul class="flex space-x-4 text-black">
@@ -64,7 +74,6 @@
       </div>
     </header>
   </nav>
-
 
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -175,6 +184,29 @@
             <input type="date" id="gradyear" name="gradyear"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
                #gradyear (ngModel)="gradyear" required>
+          </div>
+
+          <h2 class="text-2xl font-bold mb-4">Internship Details</h2>
+          <div>
+
+          </div>
+          <div>
+            <label class="block text-gray-700 font mb-2" for="uniname">Quarter Details: </label>
+            <select id="association" name="association"
+              class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+              #association (ngModel)="association" required>
+              <option value="" disabled selected>Choose Quarter</option>
+              <option value="Q1">Q1</option>
+              <option value="Q2">Q2</option>
+              <option value="Q3">Q3</option>
+              <option value="Q4">Q4</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-gray-700 font mb-2" for="coursename">LinkedIn URL</label>
+            <input type="url" id="coursename" name="coursename"
+              class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Ex. BTech, BE, BBA ...etc" #coursename (ngModel)="coursename" required>
           </div>
 
         </div>

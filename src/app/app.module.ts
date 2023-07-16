@@ -27,6 +27,8 @@ import { InternprofileComponent } from './internprofile/internprofile.component'
 import { MaterialModule } from 'src/material.module';
 import { ToastrModule } from 'ngx-toastr';
 import { InvalidDialogComponent } from './invalid-dialog/invalid-dialog.component';
+import { MentordashboardComponent } from './mentordashboard/mentordashboard.component';
+import { InterndashboardComponent } from './interndashboard/interndashboard.component';
 
 
 
@@ -45,7 +47,9 @@ import { InvalidDialogComponent } from './invalid-dialog/invalid-dialog.componen
     DialogBodyComponent,
     UpdateDialogBodyComponent,
     InternprofileComponent,
-    InvalidDialogComponent
+    InvalidDialogComponent,
+    MentordashboardComponent,
+    InterndashboardComponent
   ],
   imports: [
     BrowserModule,

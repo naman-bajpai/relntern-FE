@@ -11,7 +11,8 @@ import { InactiveComponent } from './inactive/inactive.component';
 import { InternsuccessComponent } from './internsuccess/internsuccess.component';
 import { MentorlistComponent } from './mentorlist/mentorlist.component';
 import { InternprofileComponent } from './internprofile/internprofile.component';
-
+import { MentordashboardComponent } from './mentordashboard/mentordashboard.component';
+import { InterndashboardComponent } from './interndashboard/interndashboard.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -23,7 +24,9 @@ const routes: Routes = [
   { path: 'inactive', component: InactiveComponent },
   { path: 'internsuccess', component: InternsuccessComponent },
   { path: 'mentorlist', component: MentorlistComponent },
-  { path: 'internprofile', component: InternprofileComponent }
+  { path: 'internprofile', component: InternprofileComponent },
+  { path: 'mentordashboard', component: MentordashboardComponent },
+  { path: 'interndashboard', component: InterndashboardComponent}
 ];
 
 @NgModule({
