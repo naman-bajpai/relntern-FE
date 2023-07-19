@@ -31,4 +31,18 @@ export class InternService {
   public updateIntern(intern: any) {
     return this.http.put(this.API + '/updateIntern', intern);
   }
+
+
+  public getInactiveInterns() {
+    return this.http.get(this.API + '/getInactiveInterns');
+  }
+
+
+  public moveToInactive(internId: number) {
+    return this.http.post(`${this.API}/${internId}/moveToInactive`, {});
+  }
+
+  public deleteInactiveIntern(id: any) {
+    return this.http.delete(this.API + '/deleteInactiveIntern?id=' + id);
+  }
 }

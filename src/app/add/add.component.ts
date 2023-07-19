@@ -2,14 +2,21 @@ import { Component } from '@angular/core';
 import { NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { InternService } from '../intern.service';
 import { Router } from '@angular/router';
+import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
   styleUrls: ['./add.component.css']
 })
-export class AddComponent {
+export class AddComponent implements OnInit{
   registerForm: FormGroup;
+  internDetails: any;
+
+
+  ngOnInit(): void {
+    this.getInterns();
+  }
 
   constructor(
     private internService: InternService,
@@ -50,6 +57,21 @@ export class AddComponent {
       // Handle form validation errors
       console.log('Form is invalid');
     }
+  }
+
+
+
+
+  getInterns(): void {
+    this.internService.getInterns().subscribe(
+      (resp) => {
+        console.log(resp);
+        this.internDetails = resp;
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
   }
 
   cancel() {

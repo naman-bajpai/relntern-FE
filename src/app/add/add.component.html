@@ -104,9 +104,15 @@
 
           <div>
             <label class="block text-gray-700 font mb-2" for="mentor">Mentor</label>
-            <input type="mentor" id="mentor" name="mentor"
-              class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter mentor name" #mentorname (ngModel)="mentorname" required>
+            <select id="mentor" name="mentor"
+            class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+            #mentor (ngModel)="mentor">
+            <option value="Deepthi Namala" >Deepthi Namala</option>
+            <option value="Sunil Yadav">Sunil Yadav</option>
+            <option value="Madhurika Tiwari">Madhurika Tiwari</option>
+            <option value="Marketing">Marketing</option>
+            <option value="HR">HR</option>
+          </select>
           </div>
 
           <div>
@@ -140,11 +146,12 @@
               #enddate (ngModel)="enddate" required>
           </div>
           <div>
-            <label class="block text-gray-700 font mb-2" for="role">Role</label>
+            <label class="block text-gray-700 font mb-2" for="role">Technical Skillset</label>
             <input type="data" id="role" name="role"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter intern role" #role (ngModel)="role" required>
           </div>
+
           <div>
             <label class="block text-gray-700 font mb-2" for="association">Association</label>
             <select id="association" name="association"
@@ -157,6 +164,13 @@
               <option value="HR">HR</option>
             </select>
           </div>
+          <div class="col-span-2">
+            <label class="block text-gray-700 font mb-2" for="reference">Reference</label>
+            <input type="text" id="reference" name="reference"
+              class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter reference name here" #reference (ngModel)="reference" required>
+          </div>
+
           <h2 class="text-2xl font-bold mb-4">Academic Details</h2>
           <div>
 
@@ -192,9 +206,9 @@
           </div>
           <div>
             <label class="block text-gray-700 font mb-2" for="uniname">Quarter Details: </label>
-            <select id="association" name="association"
+            <select id="quarter" name="quarter"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              #association (ngModel)="association" required>
+              #quarter (ngModel)="quarter" required>
               <option value="" disabled selected>Choose Quarter</option>
               <option value="Q1">Q1</option>
               <option value="Q2">Q2</option>
@@ -204,9 +218,9 @@
           </div>
           <div>
             <label class="block text-gray-700 font mb-2" for="coursename">LinkedIn URL</label>
-            <input type="url" id="coursename" name="coursename"
+            <input type="url" id="linkedlink" name="linkedlink"
               class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Ex. BTech, BE, BBA ...etc" #coursename (ngModel)="coursename" required>
+              placeholder="For ex : www.linkedin.com/profilename " #linkedlink (ngModel)="linkedlink" required>
           </div>
 
         </div>

@@ -56,12 +56,19 @@
                     #enddate [(ngModel)]="internUpdate.endDate" required>
             </div>
             <div>
-                <label class="block text-gray-700 font mb-2" for="role">Role</label>
+                <label class="block text-gray-700 font mb-2" for="role">Technical Skillset</label>
                 <input type="data" id="role" name="role"
                     class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="Enter intern role" #role [(ngModel)]="internUpdate.role" required>
             </div>
-            <div>
+            <div >
+                <label class="block text-gray-700 font mb-2" for="reference">Reference</label>
+                <input type="text" id="reference" name="reference"
+                  class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter reference name here" #reference [(ngModel)]="internUpdate.reference" required>
+            </div>
+
+            <div class="col-span-2">
                 <label class="block text-gray-700 font mb-2" for="association">Association</label>
                 <select id="association" name="association"
                     class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -100,6 +107,20 @@
                 <input type="date" id="gradyear" name="gradyear"
                     class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
                     #gradyear [(ngModel)]="internUpdate.gradyear" required>
+            </div>
+
+            <div>
+                <label class="block text-gray-700 font mb-2" for="quarter">Choose Quarter</label>
+                <input type="text" id="quarter" name="quarter"
+                    class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    #gradyear [(ngModel)]="internUpdate.quarter" required>
+            </div>
+
+            <div>
+                <label class="block text-gray-700 font mb-2" for="gradyear">LinkedIn Link</label>
+                <input type="text" id="linkedlink" name="linkedlink"
+                    class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    #gradyear [(ngModel)]="internUpdate.linkedlink" required>
             </div>
 
         </div>

@@ -29,6 +29,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { InvalidDialogComponent } from './invalid-dialog/invalid-dialog.component';
 import { MentordashboardComponent } from './mentordashboard/mentordashboard.component';
 import { InterndashboardComponent } from './interndashboard/interndashboard.component';
+import { InactiveDeleteComponent } from './inactive-delete/inactive-delete.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 
 
 
@@ -49,7 +51,9 @@ import { InterndashboardComponent } from './interndashboard/interndashboard.comp
     InternprofileComponent,
     InvalidDialogComponent,
     MentordashboardComponent,
-    InterndashboardComponent
+    InterndashboardComponent,
+    InactiveDeleteComponent,
+    ScheduleComponent
   ],
   imports: [
     BrowserModule,

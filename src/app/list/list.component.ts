@@ -67,6 +67,19 @@ export class ListComponent implements OnInit {
       data: intern
     });
   }
+
+  moveToInactive(intern: any) {
+    this.internService.moveToInactive(intern.id).subscribe(
+      () => {
+        console.log('Intern moved to inactive interns successfully.');
+        this.router.navigate(['/'], {skipLocationChange: true}).then(() => this.router.navigate(['/list']));
+        this.getInterns();
+      },
+      (error) => {
+        console.log('Error moving intern to inactive interns:', error);
+      }
+    );
+  }
   
     closeDialog() {
       this.matDialog.closeAll();

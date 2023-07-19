@@ -21,7 +21,7 @@ export class LoginComponent {
       this.goToPage('mentordashboard');
     }
     else if (username === 'intern' && password === 'intern') {
-      this.goToPage('mentordashboard');
+      this.goToPage('interndashboard');
     }
     else {
       console.log('Invalid username or password');

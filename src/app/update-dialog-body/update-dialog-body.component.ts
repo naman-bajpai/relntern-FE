@@ -32,6 +32,9 @@ export class UpdateDialogBodyComponent {
       uniname: data.intern.uniname,
       coursename: data.intern.coursename,
       specialization: data.intern.specialization,
+      linkedlink: data.intern.linkedlink,
+      quarter: data.intern.quarter,
+      reference : data.intern.reference
     };
   }
 
