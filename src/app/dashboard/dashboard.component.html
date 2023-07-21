@@ -31,13 +31,13 @@
         border-color: transparent;
       }
     }
-    
+
     #dashboard-menu:hover {
       transform: translate(-1.5%, -1.5%);
       transition: transform 0.45s;
     }
 
-    #table-div{
+    #table-div {
       margin-bottom: 10px;
     }
   </style>
@@ -56,7 +56,7 @@
         </h1>
         <nav>
           <ul class="flex space-x-4 text-black">
-            <li id="Add_Mentor"><button type="button"
+            <!-- <li id="Add_Mentor"><button type="button"
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
                 (click)="goToPage('inactive')">Past Interns</button></li>
             <li id="Add_Mentor"><button type="button"
@@ -64,7 +64,7 @@
                 (click)="goToPage('addmentor')">Add Mentor</button></li>
             <li id="Add_Mentor"><button type="button"
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
-                (click)="goToPage('mentorlist')">Mentor List</button></li>
+                (click)="goToPage('mentorlist')">Mentor List</button></li> -->
             <li id="Add_Mentor"><button type="button"
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
                 (click)="goToPage('')">Logout</button></li>
@@ -86,25 +86,44 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
       <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl" id="dashboard-menu">
         <h3 class="text-xl font-bold mb-2" id="add-intern-text">Add Interns</h3>
-        <p class="text-gray-700">Click here to add a new intern to the system.</p>
+        <p class="text-gray-700">Click here to add a new intern</p>
         <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
           (click)="goToPage('add')">Add Intern</button>
       </div>
 
       <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl" id="dashboard-menu">
         <h3 class="text-xl font-bold mb-2">List of Interns</h3>
-        <p class="text-gray-700">View list of Interns</p>
+        <p class="text-gray-700">View list of interns</p>
         <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
           (click)="goToPage('list')">View List</button>
       </div>
       <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl" id="dashboard-menu">
-        <h3 class="text-xl font-bold mb-2">Provide remarks</h3>
-        <p class="text-gray-700">Click here to add remarks for a particular intern.</p>
-        <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">View
-          Schedule</button>
+        <h3 class="text-xl font-bold mb-2">Slot List</h3>
+        <p class="text-gray-700">Click here to view available slots</p>
+        <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+          (click)="goToPage('schedule')">Slot List</button>
+      </div>
+      <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl" id="dashboard-menu">
+        <h3 class="text-xl font-bold mb-2">Past Interns</h3>
+        <p class="text-gray-700">Click here to view the past interns</p>
+        <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+          (click)="goToPage('inactive')">View List</button>
+      </div>
+      <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl" id="dashboard-menu">
+        <h3 class="text-xl font-bold mb-2">Add Mentor</h3>
+        <p class="text-gray-700">Click here to add mentor</p>
+        <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+          (click)="goToPage('addmentor')">Add here</button>
+      </div>
+      <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl" id="dashboard-menu">
+        <h3 class="text-xl font-bold mb-2">Mentor List</h3>
+        <p class="text-gray-700">Click here to view mentor list</p>
+        <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+          (click)="goToPage('mentorlist')">View Mentor list</button>
       </div>
     </div>
   </main>
+  
 
   <div class="container mx-auto mt-8 px-4" id="table-body">
     <div id="table-div" class="bg-white rounded-lg shadow-lg overflow-hidden">
@@ -121,7 +140,8 @@
         <tbody>
           <tr *ngFor="let interns of internDetails">
             <td class="py-2 px-4">{{interns.id}}</td>
-            <td class="py-2 px-4">{{interns.fullname}}</td>
+            <td class="py-2 px-4"><button id="view-profile" (click)="openDialog(interns)">{{interns.fullname}}</button>
+            </td>
             <td class="py-2 px-4">{{interns.mentor}}</td>
             <td class="py-2 px-4">{{interns.endDate}}</td>
             <td class="py-2 px-4">{{interns.association}}</td>

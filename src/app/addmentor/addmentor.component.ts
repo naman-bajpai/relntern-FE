@@ -13,8 +13,6 @@ export class AddmentorComponent {
   constructor(private router:Router, private internService : InternService) { }
 
 
-  
-
   register(registerForm: NgForm) {
     if (registerForm.valid) {
       this.internService.registerMentor(registerForm.value).subscribe(

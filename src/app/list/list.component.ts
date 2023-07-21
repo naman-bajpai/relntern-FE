@@ -4,6 +4,7 @@ import { InternService } from '../intern.service';
 import { MatDialog } from '@angular/material/dialog';
 import  { DialogBodyComponent } from '../dialog-body/dialog-body.component';
 import { UpdateDialogBodyComponent } from '../update-dialog-body/update-dialog-body.component';
+import { InternprofileComponent } from '../internprofile/internprofile.component';
 
 @Component({
   selector: 'app-list',
@@ -42,15 +43,6 @@ export class ListComponent implements OnInit {
     );
   }
 
-  // openEdit(id: number): void {
-  //   this.matDialog.open(UpdateDialogBodyComponent, {
-  //     width: '800px',
-  //     height: '700px',
-  //     data: { id: id }
-  //   });
-  // }
-
-
   openEdit(intern: any): void {
     console.log(intern);
     this.matDialog.open(UpdateDialogBodyComponent, {
@@ -83,6 +75,14 @@ export class ListComponent implements OnInit {
   
     closeDialog() {
       this.matDialog.closeAll();
+  }
+
+  openProfile(intern: any): void {
+    this.matDialog.open(InternprofileComponent, {
+      width: '600px',
+      height: '600px',
+      data: intern,
+    });
   }
 
   goToPage(pageName: string): void {

@@ -33,11 +33,29 @@
             margin: 0;
         }
 
-        #fullname,#email{
+        #fullname,
+        #email {
             padding-right: 40px;
             padding-left: 40px;
             padding-top: 10px;
             padding-bottom: 10px;
+        }
+
+        /* Additional style for progress bar */
+        .progress {
+            height: 0.5rem;
+            border-radius: 0.25rem;
+            background-color: #E2E8F0;
+            overflow: hidden;
+        }
+
+        .progress .progress-accent {
+            height: 100%;
+            border-radius: 0.25rem;
+        }
+
+        #status-bar {
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -54,9 +72,9 @@
                 <nav>
                     <ul class="flex space-x-4 text-black">
                         <li>
-                            <a href="dashboard.html"
-                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">Back
-                                to Dashboard</a>
+                            <button type="button"
+                                class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+                                (click)="closeDialog()">Close</button>
                         </li>
                     </ul>
                 </nav>
@@ -66,60 +84,52 @@
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a (click)="goToPage('dashboard')">Home</a></li>
             <li class="breadcrumb-item active" aria-current="page">Intern profile</li>
         </ol>
     </nav>
 
-    <div class="container mx-auto">
+    <div class="container mx-auto mt-8 px-4">
         <div class="grid-container">
-            <div class="grid-item">
-                <Label for="fullname">Intern Name :</Label>
-                <h3 id="fullname">Naman Bajpai</h3>
-                <Label for="fullname">Intern Email :</Label>
-                <h4 id="email">namanbajpai4@gmail.com</h4>
+            <div class="grid-item" id="name-grid">
+                <div class="relative w-20 h-20 mx-auto overflow-hidden bg-gray-100 rounded-full">
+                    <img class="absolute w-20 h-20 left-0 top-0 object-cover" src="https://www.pngkit.com/png/detail/897-8971229_admin-icon-white.png"
+                        alt="Avatar">
+                </div>
+                <h3 class="text-2xl font-bold text-center mt-4">{{ internProfile.fullname }}</h3>
+                <p class="text-center text-gray-500">{{internProfile.role}}</p>
             </div>
+
             <div class="grid-item">
-                <h3>Project Details</h3>
-                <label for="mentor">Mentor Name:</label>
-                <h4 id="mentor">Deepthi Namala</h4>
-
-                <label for="mentoremail">Mentor Email:</label>
-                <h4 id="mentoremail">deepthi.namala@ril.com</h4>
-
-                <label for="projectname">Project Name:</label>
-                <h4 id="projectname">Relntern</h4>
-
-                <label for="projectstatus">Project Status:</label>
-                <h4 id="projectstatus">Started</h4>
-
-                <label for="startDate">Start Date:</label>
-                <h4 id="startDate">30-05-2023</h4>
-
-                <label for="endDate">End Date:</label>
-                <h4 id="endDate">30-05-2023</h4>
+                <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+                <p><strong>Email:</strong>{{ internProfile.email }}</p>
+                <p><strong>Reference Name:</strong> {{internProfile.reference}}</p>
             </div>
-            <div class="grid-item">
-                <h3>Role & Association</h3>
-                <label for="role">Role:</label>
-                <h4 id="role">Full-Stack Developer</h4>
 
-                <label for="association">Association:</label>
-                <h4 id="association">PetChem IT</h4>
+            <div class="grid-item">
+                <h3 class="text-xl font-semibold mb-4">Project Details</h3>
+                <p><strong>Project Name:</strong>{{ internProfile.projectname }}</p>
+                <p><strong>Project Status:</strong></p>
+                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700" id="status-bar">
+                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: {{internProfile.projectstatus}}%"></div>
+                </div>
+
+                <p><strong>Start Date:</strong> {{internProfile.startDate}}</p>
+                <p><strong>End Date:</strong> {{internProfile.endDate}}</p>
             </div>
+
             <div class="grid-item">
-                <h3>Academic Details</h3>
-                <label for="uniname">University Name:</label>
-                <h4 id="uniname">Stanford University</h4>
+                <h3 class="text-xl font-semibold mb-4">Educational Details</h3>
+                <p><strong>University:</strong> {{internProfile.uniname}}</p>
+                <p><strong>Course Name:</strong> {{internProfile.coursename}}</p>
+                <p><strong>Specialization:</strong> {{internProfile.specialization}}</p>
+                <p><strong>Graduation Year:</strong> {{internProfile.gradyear}}</p>
+            </div>
 
-                <label for="coursename">Course Name:</label>
-                <h4 id="coursename">Bachelor of Science</h4>
-
-                <label for="specialization">Specialization:</label>
-                <h4 id="specialization">Computer Science</h4>
-
-                <label for="gradyear">Graduation Date:</label>
-                <h4 id="gradyear">31-06-2026</h4>
+            <div class="grid-item">
+                <h3 class="text-xl font-semibold mb-4">Mentor Details</h3>
+                <p><strong>Mentor Name:</strong> {{ internProfile.mentor }}</p>
+                <p><strong>Mentor Email:</strong>{{ internProfile.mentoremail }}</p>
+                <p><strong>Association:</strong>{{ internProfile.association }}</p>
             </div>
         </div>
     </div>

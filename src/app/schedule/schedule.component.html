@@ -1,1 +1,146 @@
-<p>schedule works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relntern Manager</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <style>
+    .avatar {
+      vertical-align: middle;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+
+    button:hover {
+      background-color: #4CAF50;
+      color: white;
+      transition: ease 0.5s;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    #dashboard-menu:hover {
+      transform: translate(-1.5%, -1.5%);
+      transition: transform 0.45s;
+    }
+
+    #table-div {
+      margin-bottom: 10px;
+    }
+  </style>
+
+</head>
+
+<body class="bg-white-100">
+  <nav>
+    <header class="bg-white py-4">
+      <div class="container mx-auto flex justify-between items-center px-4">
+        <h1 class="text-black text-xl font-bold flex items-center">
+          <img class="mx-auto h-10 w-auto"
+            src="https://1000logos.net/wp-content/uploads/2021/08/Reliance-Industries-Limited-RIL-Logo-500x314.jpg"
+            alt="Your Company">
+
+        </h1>
+        <nav>
+          <ul class="flex space-x-4 text-black">
+            <li id="Add_Mentor"><button type="button"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+                (click)="goToPage('inactive')">Past Interns</button></li>
+            <li id="Add_Mentor"><button type="button"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+                (click)="goToPage('addmentor')">Add Mentor</button></li>
+            <li id="Add_Mentor"><button type="button"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+                (click)="goToPage('mentorlist')">Mentor List</button></li>
+            <li id="Add_Mentor"><button type="button"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+                (click)="goToPage('')">Logout</button></li>
+
+          </ul>
+        </nav>
+      </div>
+    </header>
+  </nav>
+
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a (click)="goToPage('dashboard')">Home</a></li>
+      <li class="breadcrumb-item">Schedule Page</li>
+    </ol>
+  </nav>
+
+
+
+  <!-- <div class="control-section">
+      <ejs-gantt id="ganttDefault" height="430px" >
+      </ejs-gantt>
+  </div> -->
+
+  <!-- Schedule Page -->
+  <!-- Schedule Page -->
+<div class="container mx-auto mt-8 px-4">
+  <h2 class="text-2xl font-bold mb-4">Schedule Page</h2>
+
+  <!-- Quarter Filter Dropdown -->
+  <div class="mb-4">
+    <label for="quarterFilter" class="text-lg font-bold">Filter by Quarter:</label>
+    <select id="quarterFilter" class="ml-2 px-4 py-2 border border-gray-300 rounded" [(ngModel)]="selectedQuarter" (change)="onQuarterFilterChange()">
+      <option value="all">All Quarters</option>
+      <option value="Q1">Q1</option>
+      <option value="Q2">Q2</option>
+      <option value="Q3">Q3</option>
+      <option value="Q4">Q4</option>
+    </select>
+  </div>
+
+  <!-- Year Filter Dropdown -->
+  <div class="mb-4">
+    <label for="yearFilter" class="text-lg font-bold">Filter by Year:</label>
+    <select id="yearFilter" class="ml-2 px-4 py-2 border border-gray-300 rounded" [(ngModel)]="selectedYear" (change)="onYearFilterChange()">
+      <option value="all">All Years</option>
+      <option value="2023">2023</option>
+      <option value="2024">2024</option>
+      <!-- Add more years as needed -->
+    </select>
+  </div>
+
+  <!-- Interns Table -->
+  <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+    <table class="min-w-full table-auto">
+      <!-- Table Header -->
+      <thead>
+        <tr class="bg-gray-200">
+          <th scope="col" class="py-2 px-4">Intern ID</th>
+          <th scope="col" class="py-2 px-4">Full Name</th>
+          <th scope="col" class="py-2 px-4">Mentor</th>
+          <th scope="col" class="py-2 px-4">End Date</th>
+          <th scope="col" class="py-2 px-4">Association</th>
+        </tr>
+      </thead>
+      <!-- Table Body -->
+      <tbody id="internsTableBody" *ngFor="let intern of filteredInterns">
+        <tr>
+          <td class="py-2 px-4">{{ intern.id }}</td>
+          <td class="py-2 px-4">{{ intern.fullname }}</td>
+          <td class="py-2 px-4">{{ intern.mentor }}</td>
+          <td class="py-2 px-4">{{ intern.endDate }}</td>
+          <td class="py-2 px-4">{{ intern.quarter }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

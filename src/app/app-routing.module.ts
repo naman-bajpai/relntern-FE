@@ -13,6 +13,8 @@ import { MentorlistComponent } from './mentorlist/mentorlist.component';
 import { InternprofileComponent } from './internprofile/internprofile.component';
 import { MentordashboardComponent } from './mentordashboard/mentordashboard.component';
 import { InterndashboardComponent } from './interndashboard/interndashboard.component';
+import { ScheduleComponent } from './schedule/schedule.component';
+
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -26,7 +28,8 @@ const routes: Routes = [
   { path: 'mentorlist', component: MentorlistComponent },
   { path: 'internprofile', component: InternprofileComponent },
   { path: 'mentordashboard', component: MentordashboardComponent },
-  { path: 'interndashboard', component: InterndashboardComponent}
+  { path: 'interndashboard', component: InterndashboardComponent },
+  { path: 'schedule', component: ScheduleComponent }
 ];
 
 @NgModule({

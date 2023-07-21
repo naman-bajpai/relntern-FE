@@ -75,6 +75,12 @@
     </header>
   </nav>
 
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a (click)="goToPage('dashboard')">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Mentor List</li>
+    </ol>
+  </nav>
 
     <div class="container mx-auto mt-8 px-4">
         <div id="table-div" class="bg-white rounded-lg shadow-lg overflow-hidden">
@@ -96,7 +102,7 @@
                         <td class="py-2 px-4">{{mentor.mentorid}}</td>
                         <td class="py-2 px-4">{{mentor.mentorname}}</td>
                         <td class="py-2 px-4">{{mentor.project}}</td>
-                        <td class="py-2 px-4">{{mentor.role}}</td>
+                        <td class="py-2 px-4">{{mentor.projectstatus}}</td>
                         <td class="py-2 px-4">{{mentor.association}}</td>
                         <td class="py-2 px-4"><button class="btn btn-primary">Remarks</button></td>
                         <td class="py-2 px-4"><button class="btn btn-primary">Delete</button></td>

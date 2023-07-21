@@ -1,17 +1,20 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-internprofile',
   templateUrl: './internprofile.component.html',
-  styleUrls: ['./internprofile.component.css']
+  styleUrls: ['./internprofile.component.css'],
 })
 export class InternprofileComponent {
-  constructor(private router: Router) {
-    
-   }
+  internProfile: any;
 
-  goToPage(pageName: string): void {
-    this.router.navigate([pageName]);
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any , public dialogRef: MatDialogRef<InternprofileComponent>) {
+    this.internProfile = data;
+  }
+
+
+  public closeDialog() {
+    this.dialogRef.close();
   }
 }

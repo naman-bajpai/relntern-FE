@@ -22,6 +22,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="styles.css">
   <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+  <script src="path/to/chartjs/dist/chart.umd.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       // Trigger the typing animation after a short delay
@@ -37,6 +38,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    google.charts.load('current', { packages: ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+  </script>
 </head>
 
 <body class="mat-typography">

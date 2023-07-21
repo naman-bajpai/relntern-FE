@@ -31,6 +31,10 @@ import { MentordashboardComponent } from './mentordashboard/mentordashboard.comp
 import { InterndashboardComponent } from './interndashboard/interndashboard.component';
 import { InactiveDeleteComponent } from './inactive-delete/inactive-delete.component';
 import { ScheduleComponent } from './schedule/schedule.component';
+import { GanttModule } from '@syncfusion/ej2-angular-gantt';
+import { NgChartsModule } from 'ng2-charts';
+
+
 
 
 
@@ -69,7 +73,9 @@ import { ScheduleComponent } from './schedule/schedule.component';
     MatFormFieldModule,
     MaterialModule,
     ReactiveFormsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    GanttModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
