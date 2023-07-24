@@ -117,6 +117,14 @@
       <!-- Add more years as needed -->
     </select>
   </div>
+  <div class="mb-4">
+    <label for="mentorFilter" class="text-lg font-bold">Filter by Mentor:</label>
+    <select id="mentorFilter" class="ml-2 px-4 py-2 border border-gray-300 rounded" [(ngModel)]="selectedMentor" (change)="onMentorFilterChange()">
+      <option value="all">All Mentors</option>
+      <!-- Loop through the list of mentors to populate the dropdown -->
+      <option *ngFor="let mentor of mentors" [value]="mentor.mentorname">{{mentor.mentorname}}</option>
+    </select>
+  </div>
 
   <!-- Interns Table -->
   <div class="bg-white rounded-lg shadow-lg overflow-hidden">
@@ -135,7 +143,7 @@
       <tbody id="internsTableBody" *ngFor="let intern of filteredInterns">
         <tr>
           <td class="py-2 px-4">{{ intern.id }}</td>
-          <td class="py-2 px-4">{{ intern.fullname }}</td>
+          <td class="py-2 px-4" ><button (click)="openProfile(intern)">{{ intern.fullname }}</button></td>
           <td class="py-2 px-4">{{ intern.mentor }}</td>
           <td class="py-2 px-4">{{ intern.endDate }}</td>
           <td class="py-2 px-4">{{ intern.quarter }}</td>

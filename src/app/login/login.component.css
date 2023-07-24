@@ -11,7 +11,7 @@
 }
 .right-container p{
     font-size: 40px!important;
-    color: #4F46E5;
+    color: #3b82f6;
     font-weight: bold;
     
 }
@@ -28,7 +28,7 @@
     /* Adjust the size of the circle */
     border-radius: 50%;
     /* border: 2px solid red; */
-    background-color: #4F46E5;
+    background-color: #3b82f6;
     border-radius: 50%;
 
 }

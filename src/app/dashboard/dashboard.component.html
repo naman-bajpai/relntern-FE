@@ -13,7 +13,7 @@
       height: 50px;
       border-radius: 50%;
     }
-
+    
     button:hover {
       background-color: #4CAF50;
       color: white;
@@ -35,13 +35,17 @@
     #dashboard-menu:hover {
       transform: translate(-1.5%, -1.5%);
       transition: transform 0.45s;
+      border: 1px solid #3b82f6;
     }
+
+
+
 
     #table-div {
       margin-bottom: 10px;
     }
   </style>
-
+  <!-- Add this script section in the head of your HTML -->
 </head>
 
 <body class="bg-white-100">
@@ -113,7 +117,7 @@
         <h3 class="text-xl font-bold mb-2">Add Mentor</h3>
         <p class="text-gray-700">Click here to add mentor</p>
         <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
-          (click)="goToPage('addmentor')">Add here</button>
+          (click)="goToPage('addmentor')">Add Mentor</button>
       </div>
       <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl" id="dashboard-menu">
         <h3 class="text-xl font-bold mb-2">Mentor List</h3>
@@ -123,9 +127,12 @@
       </div>
     </div>
   </main>
-  
 
-  <div class="container mx-auto mt-8 px-4" id="table-body">
+<div class="container mx-auto mt-8 px-4" >
+  <h2>Scroll Down to view recent interns</h2>
+</div>
+
+  <div class="container mx-auto mt-8 px-4" id="table-body" id="table-pagination">
     <div id="table-div" class="bg-white rounded-lg shadow-lg overflow-hidden">
       <table class="min-w-full table-auto">
         <thead>

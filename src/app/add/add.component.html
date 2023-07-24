@@ -104,15 +104,9 @@
 
           <div>
             <label class="block text-gray-700 font mb-2" for="mentor">Mentor</label>
-            <select id="mentor" name="mentor"
-            class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-            #mentor (ngModel)="mentor">
-            <option value="Deepthi Namala" >Deepthi Namala</option>
-            <option value="Sunil Yadav">Sunil Yadav</option>
-            <option value="Madhurika Tiwari">Madhurika Tiwari</option>
-            <option value="Marketing">Marketing</option>
-            <option value="HR">HR</option>
-          </select>
+            <select id="mentor" name="mentor" class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500" #mentor (ngModel)="mentor">
+              <option *ngFor="let mentor of mentors" [value]="mentor.mentorname">{{ mentor.mentorname }}</option>
+            </select>
           </div>
 
           <div>

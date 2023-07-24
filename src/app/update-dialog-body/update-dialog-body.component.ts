@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class UpdateDialogBodyComponent {
   internUpdate: any;
+  mentors: any;
 
   constructor(
     public dialogRef: MatDialogRef<UpdateDialogBodyComponent>,
@@ -50,6 +51,18 @@ export class UpdateDialogBodyComponent {
     );
   }
 
+
+  getMentors(): void {
+    this.internService.getMentor().subscribe(
+      (resp) => { // Assuming the response is an array of Mentor objects
+        console.log(resp);
+        this.mentors = resp;
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
   closeDialog(): void {
     this.dialogRef.close();
   }

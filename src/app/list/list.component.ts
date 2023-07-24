@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { InternService } from '../intern.service';
 import { MatDialog } from '@angular/material/dialog';
-import  { DialogBodyComponent } from '../dialog-body/dialog-body.component';
+import { DialogBodyComponent } from '../dialog-body/dialog-body.component';
 import { UpdateDialogBodyComponent } from '../update-dialog-body/update-dialog-body.component';
 import { InternprofileComponent } from '../internprofile/internprofile.component';
 
@@ -14,7 +14,7 @@ import { InternprofileComponent } from '../internprofile/internprofile.component
 export class ListComponent implements OnInit {
   internDetails: any;
 
-  constructor(private router: Router, private internService: InternService, private matDialog : MatDialog) { }
+  constructor(private router: Router, private internService: InternService, private matDialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getInterns();
@@ -64,7 +64,7 @@ export class ListComponent implements OnInit {
     this.internService.moveToInactive(intern.id).subscribe(
       () => {
         console.log('Intern moved to inactive interns successfully.');
-        this.router.navigate(['/'], {skipLocationChange: true}).then(() => this.router.navigate(['/list']));
+        this.router.navigate(['/'], { skipLocationChange: true }).then(() => this.router.navigate(['/list']));
         this.getInterns();
       },
       (error) => {
@@ -72,9 +72,9 @@ export class ListComponent implements OnInit {
       }
     );
   }
-  
-    closeDialog() {
-      this.matDialog.closeAll();
+
+  closeDialog() {
+    this.matDialog.closeAll();
   }
 
   openProfile(intern: any): void {
@@ -89,3 +89,5 @@ export class ListComponent implements OnInit {
     this.router.navigate([pageName]);
   }
 }
+
+

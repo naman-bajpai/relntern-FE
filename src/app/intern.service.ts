@@ -5,6 +5,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class InternService {
+  searchInternsByName(fullname: string) {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(private http: HttpClient) { }
   API = 'http://localhost:9091';
@@ -45,4 +48,9 @@ export class InternService {
   public deleteInactiveIntern(id: any) {
     return this.http.delete(this.API + '/deleteInactiveIntern?id=' + id);
   }
+
+  public deleteMentor(mentorid: any) {
+    return this.http.delete(this.API + '/deleteMentor?mentorid=' + mentorid);
+  }
+
 }

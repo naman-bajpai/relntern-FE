@@ -1,3 +1,10 @@
+
+<style>
+  button{
+    color: #3b82f6;
+    background-color: #3b82f6;
+  }
+</style>
 <div class="flex min-h-full items-center justify-center bg-gray-100 hide-sb">
   
   <div class="max-w-md w-full mx-auto p-8 bg-white rounded-lg login-container shadow-bottom">
@@ -23,9 +30,7 @@
         <div class="input-group mb-3">
           <input type="password" class="form-control" placeholder="Password" aria-label="Recipient's username" aria-describedby="button-addon2" #password (ngModel)="password">
           <!-- <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fa-regular fa-eye"></i><i class="fa-regular fa-eye-slash"></i></button> -->
-          <button class="btn btn-outline-secondary " type="button" id="button-addon2" (click)="togglePasswordVisibility()">
-            <i class="fa-regular" [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
-          </button>
+
         </div>
         <!-- <div class="mt-1">
           <input id="password" name="password" type="password" autocomplete="current-password" required class="appearance-none block w-full px-3 py-2 rounded-md border border-gray-300 placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">

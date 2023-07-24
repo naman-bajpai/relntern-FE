@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { InternService } from '../intern.service';
+import { OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MentordeleteComponent } from '../mentordelete/mentordelete.component';
 
 @Component({
   selector: 'app-mentorlist',
@@ -9,7 +12,7 @@ import { InternService } from '../intern.service';
 })
 export class MentorlistComponent {
   mentorDetails: any;
-  constructor(private router: Router , private internService: InternService) { }
+  constructor(private router: Router , private internService: InternService, private matDialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getMentor();
@@ -28,5 +31,13 @@ export class MentorlistComponent {
   }
   goToPage(pageName: string): void {
     this.router.navigate([pageName]);
+  }
+
+  openMentorDetete(mentor :any): void {
+    this.matDialog.open(MentordeleteComponent, {
+      width: '500px',
+      height: '140px',
+      data: mentor
+    });
   }
 }
