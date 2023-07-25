@@ -4,5 +4,8 @@
 <div class="modal-footer" *ngFor="let mentor of mentorDetails">
   <button type="button" class="btn btn-primary" style="background-color: black;" (click)="deleteMentorById(mentor)">
     Delete
+  </button>  
+  <button type="button" class="btn btn-primary" style="background-color: black;" (click)="closeDialog()">
+    Close
   </button>
 </div>

@@ -4,6 +4,7 @@ import { InternService } from '../intern.service';
 import { OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { InactiveDeleteComponent } from '../inactive-delete/inactive-delete.component';
+import { InactiveprofiledialogComponent } from '../inactiveprofiledialog/inactiveprofiledialog.component';
 
 @Component({
   selector: 'app-inactive',
@@ -42,5 +43,13 @@ export class InactiveComponent implements OnInit {
         height: '140px',
         data: intern
       });
+    }
+
+    openInactiveProfile(intern: any): void {
+      this.matDialog.open(InactiveprofiledialogComponent, {
+        width: '600px',
+        height: '600px',
+        data: intern,
+       } );
     }
 }

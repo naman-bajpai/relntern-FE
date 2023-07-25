@@ -13,7 +13,6 @@ export class InternprofileComponent {
     this.internProfile = data;
   }
 
-
   public closeDialog() {
     this.dialogRef.close();
   }

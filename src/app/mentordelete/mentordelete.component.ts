@@ -41,7 +41,7 @@ export class MentordeleteComponent {
     );
   }
 
-  private closeDialog() {
+  public closeDialog() {
     this.dialogRef.close();
   } 
 

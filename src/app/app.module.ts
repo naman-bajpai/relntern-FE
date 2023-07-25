@@ -34,6 +34,7 @@ import { ScheduleComponent } from './schedule/schedule.component';
 import { GanttModule } from '@syncfusion/ej2-angular-gantt';
 import { NgChartsModule } from 'ng2-charts';
 import { MentordeleteComponent } from './mentordelete/mentordelete.component';
+import { InactiveprofiledialogComponent } from './inactiveprofiledialog/inactiveprofiledialog.component';
 
 
 
@@ -59,7 +60,8 @@ import { MentordeleteComponent } from './mentordelete/mentordelete.component';
     InterndashboardComponent,
     InactiveDeleteComponent,
     ScheduleComponent,
-    MentordeleteComponent
+    MentordeleteComponent,
+    InactiveprofiledialogComponent
   ],
   imports: [
     BrowserModule,

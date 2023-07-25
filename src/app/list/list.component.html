@@ -100,12 +100,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let interns of internDetails">
-            <td class="py-2 px-4">{{interns.id}}</td>
-            <td class="py-2 px-4"><button (click)="openProfile(interns)">{{interns.fullname}}</button></td>
-            <td class="py-2 px-4">{{interns.mentor}}</td>
-            <td class="py-2 px-4">{{interns.endDate}}</td>
-            <td class="py-2 px-4">{{interns.association}}</td>
+          <tr *ngFor="let interns of internDetails" id="list-hover" >
+              <td class="py-2 px-4"(click)="openProfile(interns)">{{interns.id}}</td>
+              <td class="py-2 px-4"(click)="openProfile(interns)">{{interns.fullname}}</td>
+              <td class="py-2 px-4"(click)="openProfile(interns)">{{interns.mentor}}</td>
+              <td class="py-2 px-4"(click)="openProfile(interns)">{{interns.endDate}}</td>
+              <td class="py-2 px-4"(click)="openProfile(interns)">{{interns.association}}</td>
+         
+         
             <td class="py-2 px-4"><button class="btn btn-primary" (click)="openEdit(interns)">Update </button></td>
             <td class="py-2 px-4"><button class="btn btn-primary" (click)="openDialog(interns)">Delete</button></td>
             <td class="py-2 px-4"><button class="btn btn-primary" (click)="moveToInactive(interns)">Inactive</button>

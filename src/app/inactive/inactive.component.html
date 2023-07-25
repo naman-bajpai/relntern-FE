@@ -94,17 +94,15 @@
             <th scope="col" class="py-2 px-4">End Date</th>
             <th scope="col" class="py-2 px-4">Association</th>
             <th scrope="col" class="py-2 px-4"></th>
-            <th scrope="col" class="py-2 px-4"></th>
-            <th scrope="col" class="py-2 px-4"></th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let interns of inactiveInternDetails">
-            <td class="py-2 px-4">{{interns.id}}</td>
-            <td class="py-2 px-4">{{interns.fullname}}</td>
-            <td class="py-2 px-4">{{interns.mentor}}</td>
-            <td class="py-2 px-4">{{interns.endDate}}</td>
-            <td class="py-2 px-4">{{interns.association}}</td>
+          <tr *ngFor="let interns of inactiveInternDetails" id="inactivelist-hover" >
+            <td class="py-2 px-4" (click)="openInactiveProfile(interns)">{{interns.id}}</td>
+            <td class="py-2 px-4" (click)="openInactiveProfile(interns)">{{interns.fullname}}</td>
+            <td class="py-2 px-4" (click)="openInactiveProfile(interns)">{{interns.mentor}}</td>
+            <td class="py-2 px-4" (click)="openInactiveProfile(interns)">{{interns.endDate}}</td>
+            <td class="py-2 px-4" (click)="openInactiveProfile(interns)">{{interns.association}}</td>
             <td class="py-2 px-4"><button class="btn btn-primary" (click)="openInactiveDialog(interns)">Delete</button></td>
           </tr>
         </tbody>

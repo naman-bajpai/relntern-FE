@@ -44,4 +44,6 @@ export class DialogBodyComponent implements OnInit {
   closeDialog() {
     this.dialogRef.close();
   }
+  
+
 }

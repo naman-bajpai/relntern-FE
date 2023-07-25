@@ -140,13 +140,13 @@
         </tr>
       </thead>
       <!-- Table Body -->
-      <tbody id="internsTableBody" *ngFor="let intern of filteredInterns">
+      <tbody id="internsTableBody" *ngFor="let intern of filteredInterns" class="schedule-list">
         <tr>
-          <td class="py-2 px-4">{{ intern.id }}</td>
+          <td class="py-2 px-4" (click)="openProfile(intern)">{{ intern.id }}</td>
           <td class="py-2 px-4" ><button (click)="openProfile(intern)">{{ intern.fullname }}</button></td>
-          <td class="py-2 px-4">{{ intern.mentor }}</td>
-          <td class="py-2 px-4">{{ intern.endDate }}</td>
-          <td class="py-2 px-4">{{ intern.quarter }}</td>
+          <td class="py-2 px-4" (click)="openProfile(intern)">{{ intern.mentor }}</td>
+          <td class="py-2 px-4" (click)="openProfile(intern)">{{ intern.endDate }}</td>
+          <td class="py-2 px-4" (click)="openProfile(intern)">{{ intern.quarter }}</td>
         </tr>
       </tbody>
     </table>

@@ -12,3 +12,8 @@
     fill: #fff;
     font-size: 14px;
   }
+
+  .schedule-list:hover{
+    background-color: #3b82f6;
+    color: white;
+  }

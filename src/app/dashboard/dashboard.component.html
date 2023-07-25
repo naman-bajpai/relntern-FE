@@ -6,45 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Relntern Manager</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
-  <style>
-    .avatar {
-      vertical-align: middle;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-    }
-    
-    button:hover {
-      background-color: #4CAF50;
-      color: white;
-      transition: ease 0.5s;
-    }
-
-    @keyframes typing {
-      from {
-        width: 0;
-      }
-    }
-
-    @keyframes blink {
-      50% {
-        border-color: transparent;
-      }
-    }
-
-    #dashboard-menu:hover {
-      transform: translate(-1.5%, -1.5%);
-      transition: transform 0.45s;
-      border: 1px solid #3b82f6;
-    }
-
-
-
-
-    #table-div {
-      margin-bottom: 10px;
-    }
-  </style>
   <!-- Add this script section in the head of your HTML -->
 </head>
 
@@ -145,7 +106,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let interns of internDetails">
+          <tr *ngFor="let interns of internDetails" id="dashboard-list" (click)="openDialog(interns)">
             <td class="py-2 px-4">{{interns.id}}</td>
             <td class="py-2 px-4"><button id="view-profile" (click)="openDialog(interns)">{{interns.fullname}}</button>
             </td>
