@@ -14,6 +14,7 @@ import { InternprofileComponent } from './internprofile/internprofile.component'
 import { MentordashboardComponent } from './mentordashboard/mentordashboard.component';
 import { InterndashboardComponent } from './interndashboard/interndashboard.component';
 import { ScheduleComponent } from './schedule/schedule.component';
+import { GantchartComponent } from './gantchart/gantchart.component';
 
 
 const routes: Routes = [
@@ -29,7 +30,8 @@ const routes: Routes = [
   { path: 'internprofile', component: InternprofileComponent },
   { path: 'mentordashboard', component: MentordashboardComponent },
   { path: 'interndashboard', component: InterndashboardComponent },
-  { path: 'schedule', component: ScheduleComponent }
+  { path: 'schedule', component: ScheduleComponent },
+  { path: 'gantchart', component: GantchartComponent },
 ];
 
 @NgModule({

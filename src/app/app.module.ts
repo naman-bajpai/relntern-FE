@@ -35,6 +35,7 @@ import { GanttModule } from '@syncfusion/ej2-angular-gantt';
 import { NgChartsModule } from 'ng2-charts';
 import { MentordeleteComponent } from './mentordelete/mentordelete.component';
 import { InactiveprofiledialogComponent } from './inactiveprofiledialog/inactiveprofiledialog.component';
+import { GantchartComponent } from './gantchart/gantchart.component';
 
 
 
@@ -61,7 +62,8 @@ import { InactiveprofiledialogComponent } from './inactiveprofiledialog/inactive
     InactiveDeleteComponent,
     ScheduleComponent,
     MentordeleteComponent,
-    InactiveprofiledialogComponent
+    InactiveprofiledialogComponent,
+    GantchartComponent
   ],
   imports: [
     BrowserModule,
