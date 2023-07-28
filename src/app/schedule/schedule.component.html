@@ -51,7 +51,7 @@
         <h1 class="text-black text-xl font-bold flex items-center">
           <img class="mx-auto h-10 w-auto"
             src="https://1000logos.net/wp-content/uploads/2021/08/Reliance-Industries-Limited-RIL-Logo-500x314.jpg"
-            alt="Your Company">
+            alt="Your Company" (click)="goToPage('dashboard')">
 
         </h1>
         <nav>
@@ -114,6 +114,8 @@
       <option value="all">All Years</option>
       <option value="2023">2023</option>
       <option value="2024">2024</option>
+      <option value="2025">2025</option>
+      <option value="2026">2026</option>
       <!-- Add more years as needed -->
     </select>
   </div>
@@ -136,7 +138,7 @@
           <th scope="col" class="py-2 px-4">Full Name</th>
           <th scope="col" class="py-2 px-4">Mentor</th>
           <th scope="col" class="py-2 px-4">End Date</th>
-          <th scope="col" class="py-2 px-4">Association</th>
+          <th scope="col" class="py-2 px-4">Quarter</th>
         </tr>
       </thead>
       <!-- Table Body -->

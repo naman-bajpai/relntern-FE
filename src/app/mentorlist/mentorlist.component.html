@@ -51,7 +51,7 @@
         <h1 class="text-black text-xl font-bold flex items-center">
           <img class="mx-auto h-10 w-auto"
             src="https://1000logos.net/wp-content/uploads/2021/08/Reliance-Industries-Limited-RIL-Logo-500x314.jpg"
-            alt="Your Company">
+            alt="Your Company" (click)="goToPage('dashboard')">
 
         </h1>
         <nav>
@@ -98,13 +98,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let mentor of mentorDetails">
+                    <tr *ngFor="let mentor of mentorDetails" id="list-hover">
                         <td class="py-2 px-4">{{mentor.mentorid}}</td>
                         <td class="py-2 px-4">{{mentor.mentorname}}</td>
                         <td class="py-2 px-4">{{mentor.project}}</td>
                         <td class="py-2 px-4">{{mentor.projectstatus}}</td>
                         <td class="py-2 px-4">{{mentor.association}}</td>
                         <td class="py-2 px-4"><button class="btn btn-primary" (click)="openMentorDetete(mentor)">Delete Mentor</button></td>
+                        <td class="py-2 px-4">
                         <td class="py-2 px-4">
                     </tr>
                 </tbody>

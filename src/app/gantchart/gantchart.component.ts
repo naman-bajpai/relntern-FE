@@ -30,7 +30,7 @@ export class GantchartComponent implements OnInit {
   };
 
   public columns: any = [
-    { field: 'internid', headerText: 'Intern ID' },
+    { field: 'id', headerText: 'Intern ID' },
     { field: 'taskName', headerText: 'Intern Name' },
     { field: 'startDate', headerText: 'Start Date' },
     { field: 'endDate', headerText: 'End Date' }

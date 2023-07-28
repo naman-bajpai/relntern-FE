@@ -17,6 +17,7 @@ import { ScheduleComponent } from './schedule/schedule.component';
 import { GantchartComponent } from './gantchart/gantchart.component';
 
 
+
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
@@ -31,7 +32,7 @@ const routes: Routes = [
   { path: 'mentordashboard', component: MentordashboardComponent },
   { path: 'interndashboard', component: InterndashboardComponent },
   { path: 'schedule', component: ScheduleComponent },
-  { path: 'gantchart', component: GantchartComponent },
+  { path: 'gantchart', component: GantchartComponent }
 ];
 
 @NgModule({

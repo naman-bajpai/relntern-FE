@@ -15,7 +15,6 @@
   #dashboard-menu:hover {
     transform: translate(-1.5%, -1.5%);
     transition: transform 0.45s;
-    border: 1px solid #3b82f6;
   }
 
 

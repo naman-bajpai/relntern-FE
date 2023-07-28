@@ -64,7 +64,7 @@ export class ListComponent implements OnInit {
   this.internService.moveToInactive(intern.id).subscribe(
     () => {
       console.log('Intern moved to inactive interns successfully.');
-      this.router.navigate(['/'], { skipLocationChange: true }).then(() => this.router.navigate(['/list']));
+      this.router.navigate(['inactive']);
 
       // Remove the intern from the internDetails array
       this.internDetails = this.internDetails.filter((item: any) => item.id !== intern.id);
